@@ -46,6 +46,7 @@
     <Compile Include="LithpAtom.cs" />
     <Compile Include="LithpBuiltins.cs" />
     <Compile Include="LithpFunctionDefinitionNative.cs" />
+    <Compile Include="LithpInteger.cs" />
     <Compile Include="LithpInterpreter.cs" />
     <Compile Include="LithpList.cs" />
     <Compile Include="LithpOpChain.cs" />

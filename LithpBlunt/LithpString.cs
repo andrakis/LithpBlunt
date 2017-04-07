@@ -41,5 +41,10 @@ namespace LithpBlunt
 		{
 			return new LithpString(value);
 		}
+
+		protected override LithpPrimitive operatorPlus(LithpPrimitive other)
+		{
+			return value + other.ToString();
+		}
 	}
 }

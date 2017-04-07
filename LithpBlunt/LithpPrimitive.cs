@@ -83,6 +83,84 @@ namespace LithpBlunt
 			return !compareEqual(a, b);
 		}
 
+		public static bool operator <(LithpPrimitive a, LithpPrimitive b)
+		{
+			if (a.LithpType() != b.LithpType())
+				return false;
+			return a.compareLessThan(b);
+		}
+
+		public static bool operator >(LithpPrimitive a, LithpPrimitive b)
+		{
+			if (a.LithpType() != b.LithpType())
+				return false;
+			return a.compareMoreThan(b);
+		}
+
+		public static bool operator <=(LithpPrimitive a, LithpPrimitive b)
+		{
+			if (a.LithpType() != b.LithpType())
+				return false;
+			return a.compareLessThan(b) || a.compareEqual(b);
+		}
+
+		public static bool operator >=(LithpPrimitive a, LithpPrimitive b)
+		{
+			if (a.LithpType() != b.LithpType())
+				return false;
+			return a.compareMoreThan(b) || a.compareEqual(b);
+		}
+
+		public static LithpPrimitive operator +(LithpPrimitive a, LithpPrimitive b)
+		{
+			return a.operatorPlus(b);
+		}
+
+		public static LithpPrimitive operator -(LithpPrimitive a, LithpPrimitive b)
+		{
+			return a.operatorMinus(b);
+		}
+
+		public static LithpPrimitive operator /(LithpPrimitive a, LithpPrimitive b)
+		{
+			return a.operatorDivide(b);
+		}
+
+		public static LithpPrimitive operator *(LithpPrimitive a, LithpPrimitive b)
+		{
+			return a.operatorMultiply(b);
+		}
+
+		protected virtual bool compareLessThan(LithpPrimitive other)
+		{
+			return false;
+		}
+
+		protected virtual bool compareMoreThan(LithpPrimitive other)
+		{
+			return false;
+		}
+
+		protected virtual LithpPrimitive operatorPlus(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
+		protected virtual LithpPrimitive operatorMinus(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
+		protected virtual LithpPrimitive operatorMultiply(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
+		protected virtual LithpPrimitive operatorDivide(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
 		// Implicit class conversions
 		public static implicit operator LithpPrimitive(string str)
 		{
