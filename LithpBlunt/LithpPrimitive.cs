@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LithpBlunt
+{
+	public enum LithpType
+	{
+		INTEGER,
+		ATOM,
+		STRING,
+		LIST,
+		DICT,
+		OPCHAIN,
+		FUNCTIONCALL,
+		LITERAL
+	}
+	public abstract class LithpPrimitive
+	{
+		public override string ToString()
+		{
+			return toString();
+		}
+		public string ToLiteral()
+		{
+			string prefix, postfix;
+			prefix = postfix = "";
+			switch(LithpType())
+			{
+				case LithpBlunt.LithpType.ATOM:
+					prefix = postfix = "'";
+					break;
+				case LithpBlunt.LithpType.STRING:
+					prefix = postfix = "\"";
+					break;
+				case LithpBlunt.LithpType.LIST:
+					prefix = "[";
+					postfix = "]";
+					break;
+				case LithpBlunt.LithpType.DICT:
+					prefix = "{";
+					postfix = "}";
+					break;
+			}
+			return prefix + ToString() + postfix;
+		}
+		protected abstract string toString();
+		public virtual bool compareEqual(LithpPrimitive other)
+		{
+			return false;
+		}
+		protected abstract int hashCode();
+
+		public abstract LithpType LithpType();
+
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return hashCode();
+		}
+
+		protected static bool compareEqual(LithpPrimitive a, LithpPrimitive b)
+		{
+			if (a.LithpType() != b.LithpType())
+				return false;
+			return a.compareEqual(b);
+		}
+
+		public static bool operator ==(LithpPrimitive a, LithpPrimitive b)
+		{
+			return compareEqual(a, b);
+		}
+		public static bool operator !=(LithpPrimitive a, LithpPrimitive b)
+		{
+			if (a.LithpType() != b.LithpType())
+				return true;
+			return !compareEqual(a, b);
+		}
+
+		// Implicit class conversions
+		public static implicit operator LithpPrimitive(string str)
+		{
+			return new LithpString(str);
+		}
+		public static implicit operator string(LithpPrimitive prim)
+		{
+			return prim.ToString();
+		}
+	}
+}
