@@ -9,12 +9,12 @@ namespace LithpBlunt
 	public delegate LithpPrimitive LithpFunctionDefinitionDelegate
 		(LithpList parameters, LithpOpChain state, LithpInterpreter interp);
 
-	public interface ILithpFunctionDefinition
+	public interface ILithpFunctionDefinition : ILithpPrimitive
 	{
 		LithpPrimitive Invoke(LithpList parameters, LithpOpChain state, LithpInterpreter interp);
 	}
 
-	public class LithpFunctionDefinitionNative : ILithpFunctionDefinition
+	public class LithpFunctionDefinitionNative : LithpPrimitive, ILithpFunctionDefinition
 	{
 		public readonly LithpAtom fn_name;
 		public readonly string[] fn_params;
@@ -32,6 +32,23 @@ namespace LithpBlunt
 			LithpInterpreter interp)
 		{
 			return fn_body(parameters, state, interp);
+		}
+
+		protected override string toString()
+		{
+			throw new NotImplementedException();
+		}
+
+		protected override int hashCode()
+		{
+			return fn_name.GetHashCode() * 34 +
+				fn_params.GetHashCode() * 17 +
+				fn_body.GetHashCode();
+		}
+
+		public override LithpType LithpType()
+		{
+			return LithpBlunt.LithpType.FN_NATIVE;
 		}
 	}
 

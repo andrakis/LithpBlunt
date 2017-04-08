@@ -8,7 +8,7 @@ namespace LithpBlunt
 {
 	public class LithpInteger : LithpPrimitive
 	{
-		protected long value = 0;
+		protected readonly long value = 0;
 
 		public LithpInteger(long value)
 		{
@@ -73,6 +73,11 @@ namespace LithpBlunt
 		}
 
 		public static implicit operator LithpInteger(long v)
+		{
+			return new LithpInteger(v);
+		}
+
+		public static implicit operator LithpInteger(int v)
 		{
 			return new LithpInteger(v);
 		}

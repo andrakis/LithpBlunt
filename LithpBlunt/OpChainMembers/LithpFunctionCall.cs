@@ -8,13 +8,13 @@ namespace LithpBlunt.OpChainMembers
 {
 	public class LithpFunctionCall : LithpOpChainMember
 	{
-		protected readonly LithpAtom function;
-		protected readonly LithpList parameters;
+		public readonly LithpAtom Function;
+		public readonly LithpList Parameters;
 
 		public LithpFunctionCall(LithpAtom function, LithpList parameters)
 		{
-			this.function = function;
-			this.parameters = parameters;
+			this.Function = function;
+			this.Parameters = parameters;
 		}
 	
 		public override LithpType LithpType()
@@ -24,14 +24,14 @@ namespace LithpBlunt.OpChainMembers
 
 		protected override int hashCode()
 		{
-			return function.GetHashCode() + parameters.GetHashCode();
+			return Function.GetHashCode() * 17 + Parameters.GetHashCode();
 		}
 
 		protected override string toString()
 		{
-			string result = "(" + function + " ";
+			string result = "(" + Function + " ";
 			bool first = true;
-			foreach(LithpPrimitive x in parameters)
+			foreach(LithpPrimitive x in Parameters)
 			{
 				if (!first)
 					result += " ";

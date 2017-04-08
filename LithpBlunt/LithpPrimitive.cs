@@ -15,9 +15,18 @@ namespace LithpBlunt
 		DICT,
 		OPCHAIN,
 		FUNCTIONCALL,
-		LITERAL
+		LITERAL,
+		FN,
+		FN_NATIVE,
 	}
-	public abstract class LithpPrimitive
+
+	public interface ILithpPrimitive
+	{
+		string ToString();
+		string ToLiteral();
+	}
+
+	public abstract class LithpPrimitive : ILithpPrimitive
 	{
 		public override string ToString()
 		{
@@ -169,6 +178,16 @@ namespace LithpBlunt
 		public static implicit operator string(LithpPrimitive prim)
 		{
 			return prim.ToString();
+		}
+
+		public static implicit operator LithpPrimitive(long v)
+		{
+			return new LithpInteger(v);
+		}
+
+		public static implicit operator LithpPrimitive(int v)
+		{
+			return new LithpInteger(v);
 		}
 	}
 }

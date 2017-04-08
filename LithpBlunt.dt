@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT1H28M18.1210355S" SolutionTotalViewTime="PT1H13M11.3751714S" SolutionTotalDebugTime="PT1M58.3817713S">
+  <FileVersion>
+    <Major>1</Major>
+    <Minor>0</Minor>
+  </FileVersion>
+  <SessionTimeList />
+  <LastSessionTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT30.998773S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-08T19:57:43.4943805+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT35.9210546S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\AppData\Local\Temp\MetadataAsSource\e400f554e2da42e09af4b8a23100beb8\b2609b909637481ca73dc210c68e13df\Dictionary.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-08T19:55:32.4668862+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29.4296833S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpAtom.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:19:49.7781479+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M8.0863261S" EditActiveTime="PT7M31.5408268S">
+      <ModifiedDate>2017-04-08T21:05:50.0901205+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpBuiltins.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T19:54:44.10412+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT42.7944476S" EditActiveTime="PT3M46.8739764S">
+      <ModifiedDate>2017-04-08T21:05:50.0571186+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpDict.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:59:09.5742123+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT10.3945946S" EditActiveTime="PT11.5386599S">
+      <ModifiedDate>2017-04-08T21:23:13.7538146+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpFunctionCall.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T19:59:22.1730246+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT35.3810237S" EditActiveTime="PT1M53.8845137S">
+      <ModifiedDate>2017-04-08T21:23:13.7118122+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpFunctionDefinitionNative.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:15:46.1222115+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT37.9131684S" EditActiveTime="PT13.2657589S">
+      <ModifiedDate>2017-04-08T21:23:13.7698155+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpInteger.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:05:32.162095+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.696097S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpInterpreter.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:21:06.8315551+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M20.3605963S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpList.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:58:23.2655636+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.0971772S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpLiteral.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:19:44.7478601+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT18.6520668S" EditActiveTime="PT3M35.693337S">
+      <ModifiedDate>2017-04-08T21:26:20.8105136+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpOpChain.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:57:23.4361415+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.9331106S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\opchainmembers\LithpOpChainMember.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:19:47.8450373+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.7294716S" EditActiveTime="PT2M25.3233119S">
+      <ModifiedDate>2017-04-08T21:23:13.7388137+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpPrimitive.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:59:27.6762476+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.262015S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpString.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:04:34.3287872+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8M25.3659052S" EditActiveTime="PT2M19.0509531S">
+      <ModifiedDate>2017-04-08T21:26:20.7905125+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\Program.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T19:57:27.7554803+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+  </LastSessionTimeList>
+  <TotalTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT1M58.3817713S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-07T23:59:15.3174681+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT35.9210546S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\AppData\Local\Temp\MetadataAsSource\e400f554e2da42e09af4b8a23100beb8\b2609b909637481ca73dc210c68e13df\Dictionary.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-08T19:55:32.4668862+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M45.4580314S" EditActiveTime="PT12M25.9246645S">
+      <ModifiedDate>2017-04-08T00:52:39.4977367+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpAtom.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:38:42.356855+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M43.751366S" EditActiveTime="PT9M46.4315422S">
+      <ModifiedDate>2017-04-08T21:05:50.0901205+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBuiltins.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:01:55.1345173+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT42.7944476S" EditActiveTime="PT3M46.8739764S">
+      <ModifiedDate>2017-04-08T21:05:50.0571186+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpDict.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:59:09.5742123+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M23.3750643S" EditActiveTime="PT4M5.6490503S">
+      <ModifiedDate>2017-04-08T21:23:13.7538146+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>3</EditedCount>
+      <ViewedCount>4</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpFunctionCall.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:21:03.3542835+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M40.8367675S" EditActiveTime="PT9M32.1347242S">
+      <ModifiedDate>2017-04-08T21:23:13.7118122+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpFunctionDefinitionNative.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:56:07.4826328+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT43.0684633S" EditActiveTime="PT5M53.9022422S">
+      <ModifiedDate>2017-04-08T21:23:13.7698155+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpInteger.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:55:37.9328508+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M44.3789702S" EditActiveTime="PT10.6806109S">
+      <ModifiedDate>2017-04-08T01:09:22.3840985+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>4</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpInterpreter.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:08:24.4957875+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M49.9757221S" EditActiveTime="PT6M39.7258627S">
+      <ModifiedDate>2017-04-08T00:29:09.5730936+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpList.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:11:04.0440049+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT33.4679145S" EditActiveTime="PT1M20.0465784S">
+      <ModifiedDate>2017-04-08T00:20:44.2101885+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpLiteral.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:18:40.9141364+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT28.7446441S" EditActiveTime="PT4M13.2674861S">
+      <ModifiedDate>2017-04-08T21:26:20.8105136+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpOpChain.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:25:15.8497254+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT12.9477405S" EditActiveTime="PT44.3075342S">
+      <ModifiedDate>2017-04-08T00:20:02.3357935+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpOpChainMember.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:17:36.3674445+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M31.7275417S" EditActiveTime="PT19M48.8069964S">
+      <ModifiedDate>2017-04-08T21:23:13.7388137+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>3</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpPrimitive.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-07T23:58:30.7949215+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5M29.5078469S" EditActiveTime="PT3M8.7467957S">
+      <ModifiedDate>2017-04-08T02:03:16.475078+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpString.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:06:03.6528235+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT44M45.4285974S" EditActiveTime="PT6M41.6139706S">
+      <ModifiedDate>2017-04-08T21:26:20.7905125+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>3</EditedCount>
+      <ViewedCount>5</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\Program.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-07T23:58:17.5431636+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+  </TotalTimeList>
+  <HistoryTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT1.696097S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpInterpreter.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:21:06.8315551+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29.4296833S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpAtom.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:19:49.7781479+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.9331106S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\opchainmembers\LithpOpChainMember.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:19:47.8450373+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.0971772S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpLiteral.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:19:44.7478601+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT35.3810237S" EditActiveTime="PT1M53.8845137S">
+      <ModifiedDate>2017-04-08T21:23:13.7118122+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpFunctionDefinitionNative.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:15:46.1222115+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT37.9131684S" EditActiveTime="PT13.2657589S">
+      <ModifiedDate>2017-04-08T21:23:13.7698155+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpInteger.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:05:32.162095+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.262015S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpString.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T21:04:34.3287872+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.7294716S" EditActiveTime="PT2M25.3233119S">
+      <ModifiedDate>2017-04-08T21:23:13.7388137+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpPrimitive.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:59:27.6762476+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT42.7944476S" EditActiveTime="PT3M46.8739764S">
+      <ModifiedDate>2017-04-08T21:05:50.0571186+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpDict.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:59:09.5742123+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M20.3605963S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpList.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:58:23.2655636+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT18.6480666S" EditActiveTime="PT3M35.693337S">
+      <ModifiedDate>2017-04-08T21:26:20.8105136+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpOpChain.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T20:57:23.4361415+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT10.3945946S" EditActiveTime="PT11.5386599S">
+      <ModifiedDate>2017-04-08T21:23:13.7538146+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpFunctionCall.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T19:59:22.1730246+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT30.998773S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-08T19:57:43.4943805+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8M25.3659052S" EditActiveTime="PT2M19.0509531S">
+      <ModifiedDate>2017-04-08T21:26:20.7905125+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\Program.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T19:57:27.7554803+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT35.9210546S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\AppData\Local\Temp\MetadataAsSource\e400f554e2da42e09af4b8a23100beb8\b2609b909637481ca73dc210c68e13df\Dictionary.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-08T19:55:32.4668862+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M8.0863261S" EditActiveTime="PT7M31.5408268S">
+      <ModifiedDate>2017-04-08T21:05:50.0901205+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpBuiltins.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T19:54:44.10412+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT6.7013833S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpOpChainMember.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T16:18:17.5663325+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT7.6204358S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpOpChain.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T16:18:09.9438966+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M38.0016053S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\opchainmembers\LithpFunctionCall.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T16:16:45.0290397+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M37.6085829S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\projects\lithpblunt\lithpblunt\LithpInterpreter.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T16:11:21.6275422+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M19.7108545S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\Program.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T02:30:55.9549948+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT33.9619425S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\Program.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T02:17:22.4984677+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.3030745S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpInterpreter.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T02:03:01.3112106+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT5.1552949S" EditActiveTime="PT5M40.6364833S">
+      <ModifiedDate>2017-04-08T02:03:16.4670775+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpInteger.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:55:37.9328508+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT46.3786528S" EditActiveTime="PT59.5964088S">
+      <ModifiedDate>2017-04-08T02:03:16.475078+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpString.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:53:27.631398+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT12.1786965S" EditActiveTime="PT18.0570328S">
+      <ModifiedDate>2017-04-08T02:05:42.5414325+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpFunctionCall.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:53:26.145313+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT49.0888075S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-08T01:52:58.81875+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT28.0416038S" EditActiveTime="PT6M52.0945705S">
+      <ModifiedDate>2017-04-08T02:03:16.4960792+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpPrimitive.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:47:09.0397438+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.9561691S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBuiltins.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:47:06.0825747+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14M20.3202075S" EditActiveTime="PT1M4.1786708S">
+      <ModifiedDate>2017-04-08T02:06:24.6928434+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\Program.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:38:30.8461048+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3.7712158S" EditActiveTime="PT10.6806109S">
+      <ModifiedDate>2017-04-08T01:09:22.3840985+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpInterpreter.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:08:24.4957875+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT32.7088708S" EditActiveTime="PT2M14.8907154S">
+      <ModifiedDate>2017-04-08T01:09:39.4500747+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBuiltins.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T01:01:55.1345173+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M5.4557438S" EditActiveTime="PT7M38.2502105S">
+      <ModifiedDate>2017-04-08T01:09:22.4080999+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpFunctionDefinitionNative.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:56:07.4826328+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M16.0283481S" EditActiveTime="PT12M25.9246645S">
+      <ModifiedDate>2017-04-08T00:52:39.4977367+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpAtom.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:38:42.356855+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.4761417S" EditActiveTime="PT37.5741491S">
+      <ModifiedDate>2017-04-08T00:28:40.9644573+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpOpChain.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:25:15.8497254+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M22.8001679S" EditActiveTime="PT3M36.0533576S">
+      <ModifiedDate>2017-04-08T00:48:54.3698601+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpFunctionCall.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:21:03.3542835+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT30.3707373S" EditActiveTime="PT1M20.0465784S">
+      <ModifiedDate>2017-04-08T00:20:44.2101885+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpLiteral.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:18:40.9141364+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4.3132466S" EditActiveTime="PT44.3075342S">
+      <ModifiedDate>2017-04-08T00:20:02.3357935+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\OpChainMembers\LithpOpChainMember.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:17:36.3674445+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M29.6151258S" EditActiveTime="PT6M39.7258627S">
+      <ModifiedDate>2017-04-08T00:29:09.5730936+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpList.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:11:04.0440049+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M42.8671791S" EditActiveTime="PT2M9.1503869S">
+      <ModifiedDate>2017-04-08T00:31:08.2638824+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpString.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-08T00:06:03.6528235+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT38.2941908S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2017-04-07T23:59:15.3174681+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3M37.9564663S" EditActiveTime="PT10M31.389114S">
+      <ModifiedDate>2017-04-08T00:54:41.1916972+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpPrimitive.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-07T23:58:30.7949215+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT17M6.0706877S" EditActiveTime="PT3M18.3843467S">
+      <ModifiedDate>2017-04-08T01:10:49.5190824+10:00</ModifiedDate>
+      <ModifiedBy>Daedalus</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\Program.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>c:\users\daedalus\documents\visual studio 2015\Projects\LithpBlunt\LithpBlunt\LithpBlunt.csproj</ProjectName>
+      <CreatedDate>2017-04-07T23:58:17.5431636+10:00</CreatedDate>
+      <ViewedBy>Daedalus</ViewedBy>
+    </DevTrackerDataItem>
+  </HistoryTimeList>
+</DevTrackerData>
