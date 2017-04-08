@@ -16,7 +16,7 @@ namespace LithpBlunt
 			value = new List<T>();
 		}
 
-		public LithpListType (params T[] values)
+		public LithpListType (T[] values)
 		{
 			value = new List<T>(values);
 		}
@@ -122,10 +122,18 @@ namespace LithpBlunt
 
 	public class LithpList : LithpListType<LithpPrimitive>
 	{
-		public LithpList(params LithpPrimitive[] values)
+		public LithpList()
+		{
+
+		}
+		public LithpList(LithpPrimitive[] values)
 			: base(values)
 		{
 
+		}
+		public static LithpList New(params LithpPrimitive[] values)
+		{
+			return new LithpList(values);
 		}
 	}
 }

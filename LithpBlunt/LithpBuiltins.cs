@@ -14,27 +14,94 @@ namespace LithpBlunt
 
 		static LithpBuiltins()
 		{
-			builtins["print/*"] = new LithpFunctionDefinitionNative("print/*", new string[] { }, Print);
+			//builtins["print/*"] = new LithpFunctionDefinitionNative("print/*", new string[] { }, Print);
+			builtins["print/*"] = builtin("print/*", Print);
+			builtins["+/*"] = builtin("+/*", Add);
+			builtins["-/*"] = builtin("-/*", Sub);
+			builtins["*/*"] = builtin("*/*", Multiply);
+			builtins["//*"] = builtin("//*", Divide);
+		}
+
+		protected static LithpFunctionDefinitionNative builtin(string name, LithpFunctionDefinitionDelegate fn, params string[] args)
+		{
+			return new LithpFunctionDefinitionNative(name, args, fn);
 		}
 
 		public static LithpPrimitive Print(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
 			bool first = true;
-			string result = "";
-
-			foreach(LithpPrimitive x in parameters)
+			LithpPrimitive result = ApplyAction((A, B, X, Y) =>
 			{
+				string r = "";
 				if (!first)
-					result += " ";
+					r += " ";
 				else
 					first = false;
-				result += x.ToString();
-			}
+				return A.ToString() + B.ToString();
+			}, parameters, state, interp);
 			Console.WriteLine(result);
 			return LithpAtom.Atom("nil");
 		}
 
+		protected delegate LithpPrimitive LithpAction(LithpPrimitive A,
+			LithpPrimitive B, LithpOpChain state, LithpInterpreter interp);
+
+		public static LithpPrimitive Add(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return ApplyAction((A, B, X, Y) => A + B, Values, state, interp);
+		}
+
+		public static LithpPrimitive Sub(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return ApplyAction((A, B, X, Y) => A - B, Values, state, interp);
+		}
+
+		public static LithpPrimitive Multiply(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return ApplyAction((A, B, X, Y) => A * B, Values, state, interp);
+		}
+
+		public static LithpPrimitive Divide(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return ApplyAction((A, B, X, Y) => A / B, Values, state, interp);
+		}
+
+		protected static LithpPrimitive ApplyAction(LithpAction action, LithpList list,
+			LithpOpChain state, LithpInterpreter interp)
+		{
+			LithpPrimitive value = CallBuiltin(Head, state, interp, list);
+			LithpList tail = CallBuiltin(Tail, state, interp, list) as LithpList;
+			foreach(var x in tail)
+			{
+				value = action(value, x, state, interp);
+			}
+			return value;
+		}
+
+		protected static LithpPrimitive CallBuiltin(LithpFunctionDefinitionDelegate fn,
+			LithpOpChain state, LithpInterpreter interp, params LithpPrimitive[] parameters)
+		{
+			return fn(new LithpList(parameters), state, interp);
+		}
+
+		public static LithpPrimitive Head(LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpList value = parameters[0] as LithpList;
+			return value[0];
+		}
+
+		public static LithpPrimitive Tail(LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpList value = parameters[0] as LithpList;
+			return new LithpList(value.Skip(1).ToArray());
+		}
 
 		public LithpFunctionDefinitionNative this[LithpAtom key] {
 			get {

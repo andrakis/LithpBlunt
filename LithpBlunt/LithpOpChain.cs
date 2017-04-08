@@ -34,6 +34,15 @@ namespace LithpBlunt
 			return Location == this.Count;
 		}
 
+		/// <summary>
+		/// Rewind the OpChain to the start.
+		/// Allows for stackless recursive invocation of Lithp functions.
+		/// </summary>
+		public void Rewind()
+		{
+			Location = 0;
+		}
+
 		public override LithpType LithpType()
 		{
 			return LithpBlunt.LithpType.OPCHAIN;

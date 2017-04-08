@@ -18,10 +18,9 @@ namespace LithpBlunt
 			LithpDict dict = new LithpDict();
 			dict["foo"] = "bar";
 			dict["num"] = 1;
-			dict["list"] = new LithpList("Hello, world!", one, test);
+			dict["list"] = LithpList.New("Hello, world!", one, test);
 			Console.WriteLine(dict.ToLiteral());
-			LithpFunctionCall fncall = new LithpFunctionCall("print/*", 
-				new LithpList(dict));
+			LithpFunctionCall fncall = new LithpFunctionCall("print/*", LithpList.New(dict));
 			Console.WriteLine("fncall tostring: {0}", fncall);
 
 			LithpBuiltins builtins = new LithpBuiltins();
@@ -32,6 +31,14 @@ namespace LithpBlunt
 			chain.Add(fncall);
 			chain.ImportBuiltins(builtins);
 			Console.WriteLine("Result of print: {0}", interp.Run(chain));
+
+			// More complex
+			LithpFunctionCall addStrings = new LithpFunctionCall("+/*",
+				LithpList.New("foo", "bar"));
+			LithpFunctionCall printAddString = new LithpFunctionCall("print/*",
+				LithpList.New("Adding two strings: ", addStrings));
+			chain.Add(printAddString);
+			Console.WriteLine("Result of add strings: {0}", interp.Run(chain));
 
 			Console.WriteLine("Tests finished, hit enter");
 			Console.ReadLine();

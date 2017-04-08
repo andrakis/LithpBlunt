@@ -32,6 +32,7 @@ namespace LithpBlunt
 				case LithpType.DICT:
 				case LithpType.INTEGER:
 				case LithpType.LIST:
+				case LithpType.STRING:
 					return current;
 				case LithpType.FUNCTIONCALL:
 					LithpFunctionCall call = (LithpFunctionCall)current;
