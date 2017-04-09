@@ -71,6 +71,15 @@ namespace LithpBlunt
 			throw new KeyNotFoundException(name);
 		}
 
+		public bool IsDefinedAny (string name)
+		{
+			if (IsDefined(name))
+				return true;
+			if (Parent)
+				return Parent.IsDefinedAny(name);
+			return false;
+		}
+
 		public bool TrySet(string name, LithpPrimitive value)
 		{
 			if (IsDefined(name))

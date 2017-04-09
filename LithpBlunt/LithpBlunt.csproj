@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionMethods\IEnumerableExtensionMethods.cs" />
     <Compile Include="LithpAtom.cs" />
     <Compile Include="LithpBuiltins.cs" />
     <Compile Include="LithpClosure.cs" />
     <Compile Include="LithpDict.cs" />
-    <Compile Include="LithpFunctionDefinitionNative.cs" />
+    <Compile Include="OpChainMembers\LithpFunctionDefinition.cs" />
+    <Compile Include="OpChainMembers\LithpFunctionDefinitionNative.cs" />
     <Compile Include="LithpInteger.cs" />
     <Compile Include="LithpInterpreter.cs" />
     <Compile Include="LithpList.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="OpChainMembers\LithpFunctionCall.cs" />
     <Compile Include="OpChainMembers\LithpLiteral.cs" />
     <Compile Include="OpChainMembers\LithpOpChainMember.cs" />
+    <Compile Include="OpChainMembers\LithpVariableReference.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

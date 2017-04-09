@@ -18,7 +18,8 @@ namespace LithpBlunt
 		LITERAL,
 		FN,
 		FN_NATIVE,
-		CLOSURE
+		CLOSURE,
+		VAR
 	}
 
 	public interface ILithpPrimitive

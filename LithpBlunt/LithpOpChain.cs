@@ -17,28 +17,38 @@ namespace LithpBlunt
 
 		protected int Location = 0; // location in list
 
+		public readonly bool Scoped;
+
 		public LithpOpChain()
 		{
 			Closure = new LithpClosure();
 			Parent = null;
+			Scoped = false;
 		}
 
 		public LithpOpChain(LithpOpChain parent)
 		{
 			Closure = new LithpClosure(parent.Closure);
 			Parent = parent;
+			Scoped = false;
 		}
 
 		public LithpOpChain(LithpOpChain parent, LithpOpChain body)
+			: this(parent, body, false) // TODO: Check this logic
+		{
+
+		}
+		public LithpOpChain(LithpOpChain parent, LithpOpChain body, bool scoped)
 			: base(body.ToArray())
 		{
 			Closure = new LithpClosure(parent.Closure);
 			Parent = parent;
+			Scoped = scoped;
 		}
 
 		public LithpOpChain CloneWithScope(LithpOpChain scope)
 		{
-			return new LithpOpChain(scope, this);
+			return new LithpOpChain(scope, this, true);
 		}
 
 		public LithpOpChainMember Get ()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LithpBlunt.OpChainMembers;
 
 namespace LithpBlunt
 {
@@ -23,6 +24,7 @@ namespace LithpBlunt
 			builtins["set/2"] = builtin("set/2", Set, "Name", "Value");
 			builtins["var/2"] = builtin("var/2", Var, "Name", "Value");
 			builtins["get/1"] = builtin("get/1", Get, "Name");
+			builtins["def/2"] = builtin("def/2", Def, "Name", "Body");
 		}
 
 		protected static LithpFunctionDefinitionNative builtin(string name, LithpFunctionDefinitionDelegate fn, params string[] args)
@@ -110,7 +112,7 @@ namespace LithpBlunt
 			return value;
 		}
 
-		public static LithpPrimitive Set(LithpPrimitive parameters, LithpOpChain state,
+		public static LithpPrimitive Set(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
 			LithpPrimitive name = CallBuiltin(Head, state, interp, parameters);
@@ -118,6 +120,19 @@ namespace LithpBlunt
 			LithpPrimitive value = CallBuiltin(Head, state, interp, tail);
 			state.Closure.Set(name, value);
 			return value;
+		}
+
+		public static LithpPrimitive Def(LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpPrimitive name = parameters[0];
+			if (name.LithpType() != LithpType.ATOM)
+				throw new ArgumentException("Function name must be an atom");
+			if (parameters[1].LithpType() != LithpType.FN)
+				throw new ArgumentException("Function body must be a FunctionDefinition");
+			LithpFunctionDefinition body = parameters[1] as LithpFunctionDefinition;
+			state.Closure.SetImmediate(body.Name, body);
+			return body;
 		}
 
 		public static LithpPrimitive Get(LithpPrimitive parameters, LithpOpChain state,

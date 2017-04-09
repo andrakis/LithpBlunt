@@ -118,6 +118,13 @@ namespace LithpBlunt
 		{
 			return ((IList<T>)value).GetEnumerator();
 		}
+
+		public void Each(Action<LithpPrimitive,int> Callback)
+		{
+			int i = 0;
+			foreach (var x in this)
+				Callback(x, i++);
+		}
 	}
 
 	public class LithpList : LithpListType<LithpPrimitive>

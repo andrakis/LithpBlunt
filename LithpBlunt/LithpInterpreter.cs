@@ -10,6 +10,11 @@ namespace LithpBlunt
 {
 	public class LithpInterpreter
 	{
+		protected int depth = 0;
+
+		public int Depth {
+			get { return depth; }
+		}
 		public LithpPrimitive Run (LithpOpChain chain)
 		{
 			LithpPrimitive value = LithpAtom.Atom("nil");
@@ -33,11 +38,17 @@ namespace LithpBlunt
 				case LithpType.INTEGER:
 				case LithpType.LIST:
 				case LithpType.STRING:
+				case LithpType.FN:
+				case LithpType.FN_NATIVE:
 					return current;
 				case LithpType.FUNCTIONCALL:
 					LithpFunctionCall call = (LithpFunctionCall)current;
 					LithpList resolved = ResolveParameters(call, chain);
 					return InvokeResolved(call, resolved, chain);
+				case LithpType.VAR:
+					// TODO: Could just lookup the value now
+					LithpVariableReference v = (LithpVariableReference)current;
+					return v.Name;
 				default:
 					throw new NotImplementedException();
 			}
@@ -58,13 +69,13 @@ namespace LithpBlunt
 		{
 			// Use the interface so that we can invoke native and Lithp methods.
 			ILithpFunctionDefinition def;
-			if(chain.Closure.IsDefined(call.Function))
+			if(chain.Closure.IsDefinedAny(call.Function))
 			{
 				def = chain.Closure[call.Function] as ILithpFunctionDefinition;
 			} else
 			{
 				string arityStar = Regex.Replace(call.Function, @"/\d+$/", "*");
-				if(chain.Closure.IsDefined(arityStar))
+				if(chain.Closure.IsDefinedAny(arityStar))
 				{
 					def = chain.Closure[arityStar] as ILithpFunctionDefinition;
 				} else
@@ -72,8 +83,16 @@ namespace LithpBlunt
 					throw new MissingMethodException();
 				}
 			}
-			LithpPrimitive result = def.Invoke(parameters, chain, this);
-			return result;
+			try
+			{
+				LithpPrimitive result;
+				result = def.Invoke(parameters, chain, this);
+				return result;
+			}
+			finally
+			{
+				depth--;
+			}
 		}
 	}
 }

@@ -10,8 +10,7 @@ namespace LithpBlunt
 {
 	class Program
 	{
-		static void Main(string[] args)
-		{
+		static void RunTests () {
 			LithpOpChain chain = new LithpOpChain();
 			LithpInteger one = 1;
 			LithpAtom test = "test";
@@ -25,7 +24,7 @@ namespace LithpBlunt
 
 			LithpBuiltins builtins = new LithpBuiltins();
 			LithpInterpreter interp = new LithpInterpreter();
-			builtins[fncall.Function].fn_body(fncall.Parameters, chain, interp);
+			builtins[fncall.Function].Invoke(fncall.Parameters, chain, interp);
 
 			// Now put it all together
 			chain.Add(fncall);
@@ -43,10 +42,10 @@ namespace LithpBlunt
 			Console.WriteLine("Result of add strings: {0}", interp.Run(chain));
 
 			LithpFunctionCall setVar = new LithpFunctionCall("set/2",
-				LithpList.New("Test", "Foo"));
+				LithpList.New(new LithpVariableReference("Test"), "Foo"));
 			LithpFunctionCall printVar = new LithpFunctionCall("print/*",
 				LithpList.New("Value of Test:", new LithpFunctionCall("get/1",
-				LithpList.New("Test"))));
+				LithpList.New(new LithpVariableReference("Test")))));
 			chain.Add(setVar);
 			chain.Add(printVar);
 
@@ -54,7 +53,38 @@ namespace LithpBlunt
 			chain.Rewind();
 			interp.Run(chain);
 
-			Console.WriteLine("Tests finished, hit enter");
+			// Try a user-defined function
+			LithpOpChain addBody = new LithpOpChain(chain);
+			addBody.Add(new LithpFunctionCall(LithpAtom.Atom("+/*"),
+				LithpList.New(
+					new LithpFunctionCall("get/1", LithpList.New(new LithpVariableReference("A"))),
+					new LithpFunctionCall("get/1", LithpList.New(new LithpVariableReference("B")))
+				)));
+			chain.Add(new LithpFunctionCall("def/2",
+				LithpList.New(
+					LithpAtom.Atom("add"),
+					LithpFunctionDefinition.New(chain, "add", addBody, "A", "B")
+				)
+			));
+			chain.Add(new LithpFunctionCall("print/*", LithpList.New(
+				"Calling user function add: ", new LithpFunctionCall(
+						"add/2",
+						LithpList.New(2, 5)
+				)
+			)));
+			interp.Run(chain);
+		}
+
+		static void Main(string[] args)
+		{
+			// Initialize LithpBuiltins now
+			LithpBuiltins builtins = new LithpBuiltins();
+
+			var watch = System.Diagnostics.Stopwatch.StartNew();
+			RunTests();
+			watch.Stop();
+			
+			Console.WriteLine("Tests finished in {0}ms, hit enter", watch.ElapsedMilliseconds);
 			Console.ReadLine();
 		}
 	}
