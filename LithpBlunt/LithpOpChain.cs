@@ -10,9 +10,36 @@ namespace LithpBlunt
 {
 	public class LithpOpChain : LithpListType<LithpOpChainMember>
 	{
-		public LithpDict Closure = new LithpDict();
+		public readonly LithpClosure Closure;
+		public readonly LithpOpChain Parent;
+
+		public string FunctionEntry = null;
 
 		protected int Location = 0; // location in list
+
+		public LithpOpChain()
+		{
+			Closure = new LithpClosure();
+			Parent = null;
+		}
+
+		public LithpOpChain(LithpOpChain parent)
+		{
+			Closure = new LithpClosure(parent.Closure);
+			Parent = parent;
+		}
+
+		public LithpOpChain(LithpOpChain parent, LithpOpChain body)
+			: base(body.ToArray())
+		{
+			Closure = new LithpClosure(parent.Closure);
+			Parent = parent;
+		}
+
+		public LithpOpChain CloneWithScope(LithpOpChain scope)
+		{
+			return new LithpOpChain(scope, this);
+		}
 
 		public LithpOpChainMember Get ()
 		{

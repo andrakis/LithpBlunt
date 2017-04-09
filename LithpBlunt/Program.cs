@@ -38,7 +38,21 @@ namespace LithpBlunt
 			LithpFunctionCall printAddString = new LithpFunctionCall("print/*",
 				LithpList.New("Adding two strings: ", addStrings));
 			chain.Add(printAddString);
+			interp.Run(chain);
+			chain.Add(addStrings);
 			Console.WriteLine("Result of add strings: {0}", interp.Run(chain));
+
+			LithpFunctionCall setVar = new LithpFunctionCall("set/2",
+				LithpList.New("Test", "Foo"));
+			LithpFunctionCall printVar = new LithpFunctionCall("print/*",
+				LithpList.New("Value of Test:", new LithpFunctionCall("get/1",
+				LithpList.New("Test"))));
+			chain.Add(setVar);
+			chain.Add(printVar);
+
+			// Now run entire chain from the start
+			chain.Rewind();
+			interp.Run(chain);
 
 			Console.WriteLine("Tests finished, hit enter");
 			Console.ReadLine();

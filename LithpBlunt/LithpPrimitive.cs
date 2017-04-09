@@ -18,6 +18,7 @@ namespace LithpBlunt
 		LITERAL,
 		FN,
 		FN_NATIVE,
+		CLOSURE
 	}
 
 	public interface ILithpPrimitive
@@ -188,6 +189,11 @@ namespace LithpBlunt
 		public static implicit operator LithpPrimitive(int v)
 		{
 			return new LithpInteger(v);
+		}
+
+		public static implicit operator bool(LithpPrimitive v)
+		{
+			return (object)v != null;
 		}
 	}
 }

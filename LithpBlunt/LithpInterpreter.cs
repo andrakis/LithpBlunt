@@ -58,13 +58,13 @@ namespace LithpBlunt
 		{
 			// Use the interface so that we can invoke native and Lithp methods.
 			ILithpFunctionDefinition def;
-			if(chain.Closure.ContainsKey(call.Function))
+			if(chain.Closure.IsDefined(call.Function))
 			{
 				def = chain.Closure[call.Function] as ILithpFunctionDefinition;
 			} else
 			{
 				string arityStar = Regex.Replace(call.Function, @"/\d+$/", "*");
-				if(chain.Closure.ContainsKey(arityStar))
+				if(chain.Closure.IsDefined(arityStar))
 				{
 					def = chain.Closure[arityStar] as ILithpFunctionDefinition;
 				} else

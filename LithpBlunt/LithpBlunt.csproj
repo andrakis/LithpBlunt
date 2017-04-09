@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="LithpAtom.cs" />
     <Compile Include="LithpBuiltins.cs" />
+    <Compile Include="LithpClosure.cs" />
     <Compile Include="LithpDict.cs" />
     <Compile Include="LithpFunctionDefinitionNative.cs" />
     <Compile Include="LithpInteger.cs" />

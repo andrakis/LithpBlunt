@@ -20,6 +20,9 @@ namespace LithpBlunt
 			builtins["-/*"] = builtin("-/*", Sub);
 			builtins["*/*"] = builtin("*/*", Multiply);
 			builtins["//*"] = builtin("//*", Divide);
+			builtins["set/2"] = builtin("set/2", Set, "Name", "Value");
+			builtins["var/2"] = builtin("var/2", Var, "Name", "Value");
+			builtins["get/1"] = builtin("get/1", Get, "Name");
 		}
 
 		protected static LithpFunctionDefinitionNative builtin(string name, LithpFunctionDefinitionDelegate fn, params string[] args)
@@ -30,17 +33,11 @@ namespace LithpBlunt
 		public static LithpPrimitive Print(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			bool first = true;
 			LithpPrimitive result = ApplyAction((A, B, X, Y) =>
 			{
-				string r = "";
-				if (!first)
-					r += " ";
-				else
-					first = false;
-				return A.ToString() + B.ToString();
+				return A.ToString() + " " + B.ToString();
 			}, parameters, state, interp);
-			Console.WriteLine(result);
+			Console.WriteLine(result.ToString());
 			return LithpAtom.Atom("nil");
 		}
 
@@ -101,6 +98,33 @@ namespace LithpBlunt
 		{
 			LithpList value = parameters[0] as LithpList;
 			return new LithpList(value.Skip(1).ToArray());
+		}
+
+		public static LithpPrimitive Var(LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpPrimitive name = CallBuiltin(Head, state, interp, parameters);
+			LithpList tail = CallBuiltin(Tail, state, interp, parameters) as LithpList;
+			LithpPrimitive value = CallBuiltin(Head, state, interp, tail);
+			state.Closure.SetImmediate(name, value);
+			return value;
+		}
+
+		public static LithpPrimitive Set(LithpPrimitive parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpPrimitive name = CallBuiltin(Head, state, interp, parameters);
+			LithpList tail = CallBuiltin(Tail, state, interp, parameters) as LithpList;
+			LithpPrimitive value = CallBuiltin(Head, state, interp, tail);
+			state.Closure.Set(name, value);
+			return value;
+		}
+
+		public static LithpPrimitive Get(LithpPrimitive parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpPrimitive name = CallBuiltin(Head, state, interp, parameters);
+			return state.Closure.Get(name);
 		}
 
 		public LithpFunctionDefinitionNative this[LithpAtom key] {
