@@ -41,5 +41,10 @@ namespace LithpBlunt.OpChainMembers
 			}
 			return result + ")";
 		}
+
+		internal static LithpFunctionCall New(LithpAtom name, params LithpPrimitive[] parameters)
+		{
+			return new LithpFunctionCall(name, new LithpList(parameters));
+		}
 	}
 }
