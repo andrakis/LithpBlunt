@@ -1,0 +1,18 @@
+% This is a test of nested if and print states to check control flow.
+% One of the original "complex" examples, though now is fairly straight forward.
+(
+	(var A 1)
+	(var B (+ A 1))
+	(var C (+ B 1))
+	(print "A:" A "B:" B "C:" C)
+	(if (== A (- C 2)) (
+		(print "Well now")
+		(if (== B (- C 1)) (
+			(print "All is well")
+		) (else (
+			(print "Oh")
+		)))
+	) (else (
+		(print "Oh, ok")
+	)))
+)

@@ -67,14 +67,20 @@ namespace LithpBlunt
 		public LithpPrimitive InvokeResolved (LithpFunctionCall call,
 			LithpList parameters, LithpOpChain chain)
 		{
+			string name = call.Function;
 			// Use the interface so that we can invoke native and Lithp methods.
 			ILithpFunctionDefinition def;
+			if(chain.Closure.TopMost && chain.Closure.TopMost.IsDefined(call.Function))
+			{
+				def = chain.Closure.TopMost[call.Function] as ILithpFunctionDefinition;
+			} else
 			if(chain.Closure.IsDefinedAny(call.Function))
 			{
 				def = chain.Closure[call.Function] as ILithpFunctionDefinition;
 			} else
 			{
 				string arityStar = Regex.Replace(call.Function, @"/\d+$/", "*");
+				name = arityStar;
 				if(chain.Closure.IsDefinedAny(arityStar))
 				{
 					def = chain.Closure[arityStar] as ILithpFunctionDefinition;
@@ -86,6 +92,8 @@ namespace LithpBlunt
 			try
 			{
 				LithpPrimitive result;
+				if (chain.LithpType() == LithpType.FN)
+					chain.FunctionEntry = name;
 				result = def.Invoke(parameters, chain, this);
 				return result;
 			}

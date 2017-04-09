@@ -75,6 +75,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Samples\complex.ast" />
+    <None Include="Samples\complex.lithp" />
+    <None Include="Samples\factorial.ast" />
+    <None Include="Samples\factorial.lithp" />
+    <None Include="Samples\fib.ast" />
+    <None Include="Samples\fib.lithp" />
+    <None Include="Samples\scope.ast" />
+    <None Include="Samples\scope.lithp" />
+    <None Include="scope.ast" />
+    <None Include="scope.lithp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

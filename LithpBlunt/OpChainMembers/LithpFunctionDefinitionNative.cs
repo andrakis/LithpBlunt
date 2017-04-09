@@ -67,6 +67,7 @@ namespace LithpBlunt.OpChainMembers
 			if (x == Match.Empty)
 			{
 				arity = fn_params.Count();
+				this.fn_name = LithpAtom.Atom(name.Name + "/" + arity.Value.ToString());
 			}
 			else
 			{

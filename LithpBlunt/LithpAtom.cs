@@ -33,6 +33,10 @@ namespace LithpBlunt
 		{
 		}
 
+		public static LithpAtom Nil = Atom("nil");
+		public static LithpAtom True = Atom("true");
+		public static LithpAtom False = Atom("false");
+
 		public override LithpType LithpType()
 		{
 			return LithpBlunt.LithpType.ATOM;

@@ -15,21 +15,27 @@ namespace LithpBlunt
 
 		static LithpBuiltins()
 		{
-			//builtins["print/*"] = new LithpFunctionDefinitionNative("print/*", new string[] { }, Print);
-			builtins["print/*"] = builtin("print/*", Print);
-			builtins["+/*"] = builtin("+/*", Add);
-			builtins["-/*"] = builtin("-/*", Sub);
-			builtins["*/*"] = builtin("*/*", Multiply);
-			builtins["//*"] = builtin("//*", Divide);
-			builtins["set/2"] = builtin("set/2", Set, "Name", "Value");
-			builtins["var/2"] = builtin("var/2", Var, "Name", "Value");
-			builtins["get/1"] = builtin("get/1", Get, "Name");
-			builtins["def/2"] = builtin("def/2", Def, "Name", "Body");
+			builtin("print/*", Print);
+			builtin("+/*", Add);
+			builtin("-/*", Sub);
+			builtin("*/*", Multiply);
+			builtin("//*", Divide);
+			builtin("set", Set, "Name", "Value");
+			builtin("var", Var, "Name", "Value");
+			builtin("get", Get, "Name");
+			builtin("def", Def, "Name", "Body");
+			builtin("scope", Scope, "OpChain");
+			builtin("if", If2, "Test", "Action");
+			builtin("if", If3, "Test", "Action", "Else");
+			builtin("?", Unary, "Test", "Action", "Else");
+			builtin("else", Else, "OpChain");
 		}
 
 		protected static LithpFunctionDefinitionNative builtin(string name, LithpFunctionDefinitionDelegate fn, params string[] args)
 		{
-			return new LithpFunctionDefinitionNative(name, args, fn);
+			LithpFunctionDefinitionNative x = new LithpFunctionDefinitionNative(name, args, fn);
+			builtins[x.Name] = x;
+			return x;
 		}
 
 		public static LithpPrimitive Print(LithpList parameters, LithpOpChain state,
@@ -40,7 +46,7 @@ namespace LithpBlunt
 				return A.ToString() + " " + B.ToString();
 			}, parameters, state, interp);
 			Console.WriteLine(result.ToString());
-			return LithpAtom.Atom("nil");
+			return LithpAtom.Nil;
 		}
 
 		protected delegate LithpPrimitive LithpAction(LithpPrimitive A,
@@ -68,6 +74,66 @@ namespace LithpBlunt
 			LithpInterpreter interp)
 		{
 			return ApplyAction((A, B, X, Y) => A / B, Values, state, interp);
+		}
+
+		public static LithpPrimitive CompareEqual(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return Values[0] == Values[1] ? LithpAtom.True : LithpAtom.False;
+		}
+
+		public static LithpPrimitive CompareNotEqual(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return Values[0] != Values[1] ? LithpAtom.True : LithpAtom.False;
+		}
+
+		public static LithpPrimitive Unary(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return Values[0] == LithpAtom.True ? Values[1] : Values[2];
+		}
+
+		public static LithpPrimitive If2(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			if (Values[0] == LithpAtom.True)
+				return interp.Run(Values[1] as LithpOpChain);
+			return LithpAtom.False;
+		}
+
+		public static LithpPrimitive If3(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			if (Values[0] == LithpAtom.True)
+				return interp.Run(Values[1] as LithpOpChain);
+			else
+				return interp.Run(Values[2] as LithpOpChain);
+		}
+
+		public static LithpPrimitive Else(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return Values[0] as LithpOpChain;
+		}
+
+		public static LithpPrimitive Recurse(LithpList Values, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			var Target = state.Parent;
+			while(Target && Target.FunctionEntry == null)
+			{
+				Target = Target.Parent;
+			}
+			if(!Target)
+			{
+				throw new Exception("Function entry not found");
+			}
+			
+			Target.Rewind();
+
+			throw new NotImplementedException();
+			return LithpAtom.Nil;
 		}
 
 		protected static LithpPrimitive ApplyAction(LithpAction action, LithpList list,
@@ -135,11 +201,18 @@ namespace LithpBlunt
 			return body;
 		}
 
-		public static LithpPrimitive Get(LithpPrimitive parameters, LithpOpChain state,
+		public static LithpPrimitive Get(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
 			LithpPrimitive name = CallBuiltin(Head, state, interp, parameters);
 			return state.Closure.Get(name);
+		}
+
+		public static LithpPrimitive Scope(LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpOpChain chain = parameters[0] as LithpOpChain;
+			return chain.CloneWithScope(state);
 		}
 
 		public LithpFunctionDefinitionNative this[LithpAtom key] {
