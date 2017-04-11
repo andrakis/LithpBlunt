@@ -146,7 +146,11 @@ namespace LithpBlunt
 #if DEBUG
 			string debug_str = null;
 			{
-				string indent = new string('|', Depth + 1);
+				string indent;
+				if(depth < 20)
+					indent = new string('|', depth + 1);
+				else
+					indent = "|             " + depth + " | |";
 				debug_str = "+ " + indent + " (" + def.Name +
 					(parameters.Count > 0 ? (" " + Inspect(parameters)) : "") + ")";
 			}
@@ -181,7 +185,10 @@ namespace LithpBlunt
 				result = def.Invoke(parameters, chain, this);
 #if DEBUG
 				{
-					debug_str += " :: " + result.ToLiteral();
+					string literal = result.ToLiteral();
+					if (literal.Length > MaxDebugLen)
+						literal = "(" + result.LithpType().ToString() + ": too large to display)";
+					debug_str += " :: " + literal;
 					Console.WriteLine(debug_str);
 				}
 #endif
