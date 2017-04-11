@@ -8,11 +8,11 @@ namespace LithpBlunt
 {
 	public class LithpString : LithpPrimitive
 	{
-		protected readonly string value;
+		public readonly string Value;
 
 		public LithpString(string value)
 		{
-			this.value = value;
+			this.Value = value;
 		}
 
 		public override LithpType LithpType()
@@ -24,17 +24,17 @@ namespace LithpBlunt
 		{
 			// TODO: Find better way to do this
 			LithpString otherString = (LithpString)other;
-			return value == otherString.value;
+			return Value == otherString.Value;
 		}
 
 		protected override int hashCode()
 		{
-			return value.GetHashCode();
+			return Value.GetHashCode();
 		}
 
 		protected override string toString()
 		{
-			return value;
+			return Value;
 		}
 
 		public static implicit operator LithpString(string value)
@@ -44,7 +44,7 @@ namespace LithpBlunt
 
 		protected override LithpPrimitive operatorPlus(LithpPrimitive other)
 		{
-			return value + other.ToString();
+			return Value + other.ToString();
 		}
 	}
 }

@@ -12,6 +12,22 @@ namespace LithpBlunt
 	{
 		protected int depth = 0;
 
+		public static readonly bool Debug;
+		public static readonly int MaxDebugLen = 100;
+		public static readonly int MaxDebugArrayLength = 100;
+
+#if DEBUG
+		static LithpInterpreter()
+		{
+			Debug = true;
+		}
+#else
+		static LithpInterpreter()
+		{
+			Debug = false;
+		}
+#endif
+
 		public int Depth {
 			get { return depth; }
 		}
@@ -40,6 +56,7 @@ namespace LithpBlunt
 				case LithpType.STRING:
 				case LithpType.FN:
 				case LithpType.FN_NATIVE:
+				case LithpType.OPCHAIN:
 					return current;
 				case LithpType.FUNCTIONCALL:
 					LithpFunctionCall call = (LithpFunctionCall)current;
@@ -64,37 +81,107 @@ namespace LithpBlunt
 			return result;
 		}
 
+		protected static string inspect(LithpPrimitive value)
+		{
+			if(value.LithpType() == LithpType.LIST)
+			{
+				LithpList list = (LithpList)value;
+				if (list.Count > MaxDebugArrayLength)
+					return "[" + list.Count.ToString() + " elements]";
+			}
+			if(value.LithpType() == LithpType.DICT)
+			{
+				LithpDict dict = (LithpDict)value;
+				if (dict.Keys.Count > MaxDebugArrayLength)
+					return "{Dict:" + dict.Keys.Count.ToString() + " elements}";
+			}
+			string result = value.ToLiteral();
+			if (result.Length > MaxDebugLen)
+				result = "(" + value.LithpType().ToString() + ": too large to display)";
+			return result;
+		}
+
+		public static string Inspect(LithpList value)
+		{
+			LithpList mapped = value.Map((v) => inspect(v));
+			string result = "";
+			bool first = true;
+			foreach(var x in mapped)
+			{
+				if (!first)
+					result += " ";
+				else
+					first = false;
+				result += x;
+			}
+			return result;
+		}
+
 		public LithpPrimitive InvokeResolved (LithpFunctionCall call,
 			LithpList parameters, LithpOpChain chain)
 		{
 			string name = call.Function;
+			string debug_str = null;
 			// Use the interface so that we can invoke native and Lithp methods.
 			ILithpFunctionDefinition def;
 			if(chain.Closure.TopMost && chain.Closure.TopMost.IsDefined(call.Function))
 			{
-				def = chain.Closure.TopMost[call.Function] as ILithpFunctionDefinition;
+				def = (ILithpFunctionDefinition)chain.Closure.TopMost[call.Function];
 			} else
 			if(chain.Closure.IsDefinedAny(call.Function))
 			{
-				def = chain.Closure[call.Function] as ILithpFunctionDefinition;
+				def = (ILithpFunctionDefinition)chain.Closure[call.Function];
 			} else
 			{
 				string arityStar = Regex.Replace(call.Function, @"/\d+$/", "*");
 				name = arityStar;
 				if(chain.Closure.IsDefinedAny(arityStar))
 				{
-					def = chain.Closure[arityStar] as ILithpFunctionDefinition;
+					def = (ILithpFunctionDefinition)chain.Closure[arityStar];
 				} else
 				{
 					throw new MissingMethodException();
 				}
 			}
+
+			if(Debug)
+			{
+				string indent = new string('|', Depth + 1);
+				debug_str = "+ " + indent + " (" + def.Name +
+					(parameters.Count > 0 ? (" " + Inspect(parameters)) : "") + ")";
+			}
+
+			depth++;
+
 			try
 			{
 				LithpPrimitive result;
 				if (chain.LithpType() == LithpType.FN)
 					chain.FunctionEntry = name;
+				if(Debug)
+				{
+					if (def.LithpType() == LithpType.FN)
+						Console.WriteLine(debug_str);
+					else
+						switch(def.Name)
+						{
+							case "while":
+							case "call":
+							case "try":
+							case "eval":
+							case "apply":
+							case "next":
+							case "recurse":
+								Console.WriteLine(debug_str);
+								break;
+						}
+				}
 				result = def.Invoke(parameters, chain, this);
+				if(Debug)
+				{
+					debug_str += " :: " + result.ToLiteral();
+					Console.WriteLine(debug_str);
+				}
 				return result;
 			}
 			finally

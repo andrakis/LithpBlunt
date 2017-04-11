@@ -68,7 +68,7 @@ namespace LithpBlunt
 				atomsByName[name] = atom;
 				atomsById[id] = atom;
 			}
-			return atomsByName[name] as LithpAtom;
+			return (LithpAtom)atomsByName[name];
 		}
 
 		public static implicit operator string(LithpAtom atom)

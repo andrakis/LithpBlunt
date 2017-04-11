@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LithpBlunt.OpChainMembers;
 
 namespace LithpBlunt
 {
@@ -78,6 +79,10 @@ namespace LithpBlunt
 
 		protected static bool compareEqual(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			if (a.LithpType() != b.LithpType())
 				return false;
 			return a.compareEqual(b);
@@ -89,6 +94,10 @@ namespace LithpBlunt
 		}
 		public static bool operator !=(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			if (a.LithpType() != b.LithpType())
 				return true;
 			return !compareEqual(a, b);
@@ -96,6 +105,10 @@ namespace LithpBlunt
 
 		public static bool operator <(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			if (a.LithpType() != b.LithpType())
 				return false;
 			return a.compareLessThan(b);
@@ -103,6 +116,10 @@ namespace LithpBlunt
 
 		public static bool operator >(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			if (a.LithpType() != b.LithpType())
 				return false;
 			return a.compareMoreThan(b);
@@ -110,6 +127,10 @@ namespace LithpBlunt
 
 		public static bool operator <=(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			if (a.LithpType() != b.LithpType())
 				return false;
 			return a.compareLessThan(b) || a.compareEqual(b);
@@ -117,6 +138,10 @@ namespace LithpBlunt
 
 		public static bool operator >=(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			if (a.LithpType() != b.LithpType())
 				return false;
 			return a.compareMoreThan(b) || a.compareEqual(b);
@@ -124,21 +149,37 @@ namespace LithpBlunt
 
 		public static LithpPrimitive operator +(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			return a.operatorPlus(b);
 		}
 
 		public static LithpPrimitive operator -(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			return a.operatorMinus(b);
 		}
 
 		public static LithpPrimitive operator /(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			return a.operatorDivide(b);
 		}
 
 		public static LithpPrimitive operator *(LithpPrimitive a, LithpPrimitive b)
 		{
+			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
+				a = ((LithpLiteral)a).Value;
+			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
+				b = ((LithpLiteral)b).Value;
 			return a.operatorMultiply(b);
 		}
 

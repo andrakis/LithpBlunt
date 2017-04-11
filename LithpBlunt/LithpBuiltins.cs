@@ -20,6 +20,8 @@ namespace LithpBlunt
 			builtin("-/*", Sub);
 			builtin("*/*", Multiply);
 			builtin("//*", Divide);
+			builtin("==", CompareEqual, "A", "B");
+			builtin("!=", CompareNotEqual, "A", "B");
 			builtin("set", Set, "Name", "Value");
 			builtin("var", Var, "Name", "Value");
 			builtin("get", Get, "Name");
@@ -98,23 +100,22 @@ namespace LithpBlunt
 			LithpInterpreter interp)
 		{
 			if (Values[0] == LithpAtom.True)
-				return interp.Run(Values[1] as LithpOpChain);
-			return LithpAtom.False;
+				return interp.Run((LithpOpChain)Values[1]);
+			return LithpAtom.Nil;
 		}
 
 		public static LithpPrimitive If3(LithpList Values, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			if (Values[0] == LithpAtom.True)
-				return interp.Run(Values[1] as LithpOpChain);
-			else
-				return interp.Run(Values[2] as LithpOpChain);
+			LithpOpChain chain = (LithpOpChain)(Values[0] == LithpAtom.True ?
+				Values[1] : Values[2]);
+			return interp.Run(new LithpOpChain(state, chain));
 		}
 
 		public static LithpPrimitive Else(LithpList Values, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			return Values[0] as LithpOpChain;
+			return (LithpOpChain)Values[0];
 		}
 
 		public static LithpPrimitive Recurse(LithpList Values, LithpOpChain state,
@@ -140,7 +141,7 @@ namespace LithpBlunt
 			LithpOpChain state, LithpInterpreter interp)
 		{
 			LithpPrimitive value = CallBuiltin(Head, state, interp, list);
-			LithpList tail = CallBuiltin(Tail, state, interp, list) as LithpList;
+			LithpList tail = (LithpList)CallBuiltin(Tail, state, interp, list);
 			foreach(var x in tail)
 			{
 				value = action(value, x, state, interp);
@@ -157,14 +158,14 @@ namespace LithpBlunt
 		public static LithpPrimitive Head(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			LithpList value = parameters[0] as LithpList;
+			LithpList value = (LithpList)parameters[0];
 			return value[0];
 		}
 
 		public static LithpPrimitive Tail(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			LithpList value = parameters[0] as LithpList;
+			LithpList value = (LithpList)parameters[0];
 			return new LithpList(value.Skip(1).ToArray());
 		}
 
@@ -172,7 +173,7 @@ namespace LithpBlunt
 			LithpInterpreter interp)
 		{
 			LithpPrimitive name = CallBuiltin(Head, state, interp, parameters);
-			LithpList tail = CallBuiltin(Tail, state, interp, parameters) as LithpList;
+			LithpList tail = (LithpList)CallBuiltin(Tail, state, interp, parameters);
 			LithpPrimitive value = CallBuiltin(Head, state, interp, tail);
 			state.Closure.SetImmediate(name, value);
 			return value;
@@ -182,7 +183,7 @@ namespace LithpBlunt
 			LithpInterpreter interp)
 		{
 			LithpPrimitive name = CallBuiltin(Head, state, interp, parameters);
-			LithpList tail = CallBuiltin(Tail, state, interp, parameters) as LithpList;
+			LithpList tail = (LithpList)CallBuiltin(Tail, state, interp, parameters);
 			LithpPrimitive value = CallBuiltin(Head, state, interp, tail);
 			state.Closure.Set(name, value);
 			return value;
@@ -196,7 +197,7 @@ namespace LithpBlunt
 				throw new ArgumentException("Function name must be an atom");
 			if (parameters[1].LithpType() != LithpType.FN)
 				throw new ArgumentException("Function body must be a FunctionDefinition");
-			LithpFunctionDefinition body = parameters[1] as LithpFunctionDefinition;
+			LithpFunctionDefinition body = (LithpFunctionDefinition)parameters[1];
 			state.Closure.SetImmediate(body.Name, body);
 			return body;
 		}
@@ -211,7 +212,7 @@ namespace LithpBlunt
 		public static LithpPrimitive Scope(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			LithpOpChain chain = parameters[0] as LithpOpChain;
+			LithpOpChain chain = (LithpOpChain)parameters[0];
 			return chain.CloneWithScope(state);
 		}
 

@@ -125,6 +125,14 @@ namespace LithpBlunt
 			foreach (var x in this)
 				Callback(x, i++);
 		}
+
+		public LithpList Map(Func<LithpPrimitive,LithpPrimitive> Callback)
+		{
+			LithpList result = new LithpList();
+			foreach (var x in this)
+				result.Add(Callback(x));
+			return result;
+		}
 	}
 
 	public class LithpList : LithpListType<LithpPrimitive>

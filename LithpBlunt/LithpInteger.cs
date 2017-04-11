@@ -8,7 +8,7 @@ namespace LithpBlunt
 {
 	public class LithpInteger : LithpPrimitive
 	{
-		protected readonly long value = 0;
+		public readonly long value = 0;
 
 		public LithpInteger(long value)
 		{

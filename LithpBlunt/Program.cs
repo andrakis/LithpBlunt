@@ -10,7 +10,7 @@ namespace LithpBlunt
 {
 	class Program
 	{
-		static void RunTests () {
+		static void RunTests() {
 			LithpOpChain chain = new LithpOpChain();
 			LithpInteger one = 1;
 			LithpAtom test = "test";
@@ -45,7 +45,7 @@ namespace LithpBlunt
 			LithpFunctionCall printVar = LithpFunctionCall.New("print/*",
 				"Value of Test:", LithpFunctionCall.New(
 					"get/1", new LithpVariableReference("Test")
-			));		
+			));
 			chain.Add(setVar);
 			chain.Add(printVar);
 
@@ -64,12 +64,22 @@ namespace LithpBlunt
 					LithpAtom.Atom("add"),
 					LithpFunctionDefinition.New(chain, "add", addBody, "A", "B")
 			));
-			chain.Add(LithpFunctionCall.New("print/*", 
+			chain.Add(LithpFunctionCall.New("print/*",
 				"Calling user function add:", LithpFunctionCall.New(
 						"add/2", 2, 5
 				)
 			));
 			interp.Run(chain);
+		}
+
+		public static void DoSamples()
+		{
+			LithpInterpreter interp = new LithpInterpreter();
+			LithpBuiltins builtins = new LithpBuiltins();
+			Console.WriteLine("Attempting factorial sample");
+			LithpOpChain fac = Samples.Factorial();
+			fac.ImportBuiltins(builtins);
+			interp.Run(fac);
 		}
 
 		static void Main(string[] args)
@@ -78,7 +88,8 @@ namespace LithpBlunt
 			LithpBuiltins builtins = new LithpBuiltins();
 
 			var watch = System.Diagnostics.Stopwatch.StartNew();
-			RunTests();
+			//RunTests();
+			DoSamples();
 			watch.Stop();
 			
 			Console.WriteLine("Tests finished in {0}ms, hit enter", watch.ElapsedMilliseconds);

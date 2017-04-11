@@ -9,6 +9,9 @@ namespace LithpBlunt.OpChainMembers
 	public class LithpLiteral : LithpOpChainMember
 	{
 		protected LithpPrimitive value;
+		public LithpPrimitive Value {
+			get { return value; }
+		}
 		public LithpLiteral(LithpPrimitive value)
 		{
 			this.value = value;
@@ -32,6 +35,36 @@ namespace LithpBlunt.OpChainMembers
 		protected override string toString()
 		{
 			return value.ToString();
+		}
+
+		protected virtual LithpPrimitive operatorPlus(LithpPrimitive other)
+		{
+			return value + other;
+		}
+
+		protected virtual LithpPrimitive operatorMinus(LithpPrimitive other)
+		{
+			return value - other;
+		}
+
+		protected virtual LithpPrimitive operatorMultiply(LithpPrimitive other)
+		{
+			return value * other;
+		}
+
+		protected virtual LithpPrimitive operatorDivide(LithpPrimitive other)
+		{
+			return value / other;
+		}
+
+		public static implicit operator LithpInteger(LithpLiteral x)
+		{
+			return ((LithpInteger)x).value;
+		}
+
+		public static implicit operator LithpString(LithpLiteral x)
+		{
+			return ((LithpString)x).Value;
 		}
 	}
 }

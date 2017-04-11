@@ -110,9 +110,9 @@ namespace LithpBlunt.Serialization
 						result = Classification.VARIABLE;
 					else if (Regex.IsMatch(phrase, "^-?[0-9e][0-9e.]*$"))
 						result = Classification.NUMBER | Classification.ATOM;
-					else if (phrase.Length > 1 && Regex.IsMatch(phrase, "\".*\"$"))
+					else if (phrase.Length > 1 && Regex.IsMatch(phrase, "^\".*\"$"))
 						result = Classification.STRING_DOUBLE;
-					else if (phrase.Length > 1 && Regex.IsMatch(phrase, "'.*'$"))
+					else if (phrase.Length > 1 && Regex.IsMatch(phrase, "^'.*'$"))
 						result = Classification.STRING_SINGLE;
 					else
 						result = Classification.ATOM;

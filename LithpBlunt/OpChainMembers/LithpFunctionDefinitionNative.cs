@@ -35,7 +35,19 @@ namespace LithpBlunt.OpChainMembers
 		/// Get the readable function name.
 		/// </summary>
 		string Name { get; }
+		/// <summary>
+		/// Invoke the definition.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <param name="state"></param>
+		/// <param name="interp"></param>
+		/// <returns></returns>
 		LithpPrimitive Invoke(LithpList parameters, LithpOpChain state, LithpInterpreter interp);
+		/// <summary>
+		/// Get the inner type
+		/// </summary>
+		/// <returns></returns>
+		LithpType LithpType();
 	}
 
 	/// <summary>
