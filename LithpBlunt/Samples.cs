@@ -49,23 +49,7 @@ namespace LithpBlunt
 			);
 			// )
 			result.Add(def);
-			result.Add(LithpFunctionCall.New("print/*", "Factorial result: ", LithpFunctionCall.New("fac/1", 55)));
-			return result;
-//			LithpOpChain addBody = new LithpOpChain(result);
-//			addBody.Add(LithpFunctionCall.New(
-//				LithpAtom.Atom("+/*"),
-//				LithpFunctionCall.New("get/1", new LithpVariableReference("A")),
-//				LithpFunctionCall.New("get/1", new LithpVariableReference("B"))
-//			));
-//			result.Add(LithpFunctionCall.New("def/2",
-//					LithpAtom.Atom("add"),
-//					LithpFunctionDefinition.New(result, "add", addBody, "A", "B")
-//			));
-//			result.Add(LithpFunctionCall.New("print/*",
-//				"Calling user function add:", LithpFunctionCall.New(
-//						"add/2", 2, 5
-//				)
-//			));
+			result.Add(LithpFunctionCall.New("print/*", "Factorial result: ", LithpFunctionCall.New("fac/1", 200)));
 			return result;
 		}
 	}

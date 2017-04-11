@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using NumberType = System.Numerics.BigInteger;
+
 namespace LithpBlunt
 {
 	public class LithpInteger : LithpPrimitive
 	{
-		public readonly long value = 0;
+		public readonly NumberType value = 0;
 
-		public LithpInteger(long value)
+		public LithpInteger(NumberType value)
 		{
 			this.value = value;
 		}
@@ -72,7 +74,7 @@ namespace LithpBlunt
 			return value > iOther.value;
 		}
 
-		public static implicit operator LithpInteger(long v)
+		public static implicit operator LithpInteger(NumberType v)
 		{
 			return new LithpInteger(v);
 		}

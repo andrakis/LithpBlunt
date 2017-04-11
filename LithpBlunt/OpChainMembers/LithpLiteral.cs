@@ -37,22 +37,22 @@ namespace LithpBlunt.OpChainMembers
 			return value.ToString();
 		}
 
-		protected virtual LithpPrimitive operatorPlus(LithpPrimitive other)
+		protected override LithpPrimitive operatorPlus(LithpPrimitive other)
 		{
 			return value + other;
 		}
 
-		protected virtual LithpPrimitive operatorMinus(LithpPrimitive other)
+		protected override LithpPrimitive operatorMinus(LithpPrimitive other)
 		{
 			return value - other;
 		}
 
-		protected virtual LithpPrimitive operatorMultiply(LithpPrimitive other)
+		protected override LithpPrimitive operatorMultiply(LithpPrimitive other)
 		{
 			return value * other;
 		}
 
-		protected virtual LithpPrimitive operatorDivide(LithpPrimitive other)
+		protected override LithpPrimitive operatorDivide(LithpPrimitive other)
 		{
 			return value / other;
 		}

@@ -121,7 +121,6 @@ namespace LithpBlunt
 			LithpList parameters, LithpOpChain chain)
 		{
 			string name = call.Function;
-			string debug_str = null;
 			// Use the interface so that we can invoke native and Lithp methods.
 			ILithpFunctionDefinition def;
 			if(chain.Closure.TopMost && chain.Closure.TopMost.IsDefined(call.Function))
@@ -144,12 +143,14 @@ namespace LithpBlunt
 				}
 			}
 
-			if(Debug)
+#if DEBUG
+			string debug_str = null;
 			{
 				string indent = new string('|', Depth + 1);
 				debug_str = "+ " + indent + " (" + def.Name +
 					(parameters.Count > 0 ? (" " + Inspect(parameters)) : "") + ")";
 			}
+#endif
 
 			depth++;
 
@@ -158,7 +159,7 @@ namespace LithpBlunt
 				LithpPrimitive result;
 				if (chain.LithpType() == LithpType.FN)
 					chain.FunctionEntry = name;
-				if(Debug)
+#if DEBUG
 				{
 					if (def.LithpType() == LithpType.FN)
 						Console.WriteLine(debug_str);
@@ -176,12 +177,14 @@ namespace LithpBlunt
 								break;
 						}
 				}
+#endif
 				result = def.Invoke(parameters, chain, this);
-				if(Debug)
+#if DEBUG
 				{
 					debug_str += " :: " + result.ToLiteral();
 					Console.WriteLine(debug_str);
 				}
+#endif
 				return result;
 			}
 			finally
