@@ -33,18 +33,18 @@ namespace LithpBlunt
 		}
 		public LithpPrimitive Run (LithpOpChain chain)
 		{
-			LithpPrimitive value = LithpAtom.Atom("nil");
+			ILithpPrimitive value = LithpAtom.Atom("nil");
 
 			while (chain.AtEnd() == false)
 			{
-				LithpOpChainMember current = chain.Next();
+				ILithpOpChainMember current = chain.Next();
 				value = resolve(current, chain);
 			}
 
-			return value;
+			return (LithpPrimitive)value;
 		}
 
-		private LithpPrimitive resolve(LithpPrimitive current, LithpOpChain chain)
+		private ILithpPrimitive resolve(ILithpPrimitive current, LithpOpChain chain)
 		{
 			switch(current.LithpType())
 			{
@@ -65,7 +65,7 @@ namespace LithpBlunt
 				case LithpType.VAR:
 					// TODO: Could just lookup the value now
 					LithpVariableReference v = (LithpVariableReference)current;
-					return v.Name;
+					return new LithpString(v.Name);
 				default:
 					throw new NotImplementedException();
 			}
@@ -76,7 +76,7 @@ namespace LithpBlunt
 			LithpList result = new LithpList();
 			foreach(var x in call.Parameters)
 			{
-				result.Add(resolve(x, chain));
+				result.Add((LithpPrimitive)resolve((LithpPrimitive)x, chain));
 			}
 			return result;
 		}
@@ -103,7 +103,7 @@ namespace LithpBlunt
 
 		public static string Inspect(LithpList value)
 		{
-			LithpList mapped = value.Map((v) => inspect(v));
+			LithpList mapped = value.Map((v) => inspect((LithpPrimitive)v));
 			string result = "";
 			bool first = true;
 			foreach(var x in mapped)

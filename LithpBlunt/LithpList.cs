@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LithpBlunt
 {
-	public abstract class LithpListType<T> : LithpPrimitive, IList<T> where T : LithpPrimitive
+	public abstract class LithpListType<T> : LithpPrimitive, IList<T> where T : ILithpPrimitive
 	{
 		protected List<T> value;
 
@@ -123,14 +123,14 @@ namespace LithpBlunt
 		{
 			int i = 0;
 			foreach (var x in this)
-				Callback(x, i++);
+				Callback(x as LithpPrimitive, i++);
 		}
 
 		public LithpList Map(Func<LithpPrimitive,LithpPrimitive> Callback)
 		{
 			LithpList result = new LithpList();
 			foreach (var x in this)
-				result.Add(Callback(x));
+				result.Add(Callback(x as LithpPrimitive));
 			return result;
 		}
 	}

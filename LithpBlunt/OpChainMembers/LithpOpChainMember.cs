@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LithpBlunt.OpChainMembers
 {
-	public abstract class LithpOpChainMember : LithpPrimitive
+	public interface ILithpOpChainMember : ILithpPrimitive
+	{
+
+	}
+	public abstract class LithpOpChainMember : LithpPrimitive, ILithpOpChainMember
 	{
 	}
 }

@@ -8,7 +8,7 @@ using LithpBlunt.OpChainMembers;
 
 namespace LithpBlunt
 {
-	public class LithpOpChain : LithpListType<LithpOpChainMember>
+	public class LithpOpChain : LithpListType<ILithpOpChainMember>, ILithpOpChainMember
 	{
 		public readonly LithpClosure Closure;
 		public readonly LithpOpChain Parent;
@@ -51,17 +51,17 @@ namespace LithpBlunt
 			return new LithpOpChain(scope, this, true);
 		}
 
-		public LithpOpChainMember Get ()
+		public ILithpOpChainMember Get ()
 		{
 			return Get(Location);
 		}
 
-		public LithpOpChainMember Get(int location)
+		public ILithpOpChainMember Get(int location)
 		{
 			return this[location];
 		}
 
-		public LithpOpChainMember Next ()
+		public ILithpOpChainMember Next ()
 		{
 			return Get(Location++);
 		}

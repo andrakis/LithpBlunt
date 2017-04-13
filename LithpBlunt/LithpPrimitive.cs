@@ -27,6 +27,7 @@ namespace LithpBlunt
 	{
 		string ToString();
 		string ToLiteral();
+		LithpType LithpType();
 	}
 
 	public abstract class LithpPrimitive : ILithpPrimitive

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using LithpBlunt.OpChainMembers;
+using LithpBlunt.Serialization;
 
 namespace LithpBlunt
 {
@@ -86,10 +87,12 @@ namespace LithpBlunt
 		{
 			// Initialize LithpBuiltins now
 			LithpBuiltins builtins = new LithpBuiltins();
+			LithpJsonParser parser = new LithpJsonParser();
 
 			var watch = System.Diagnostics.Stopwatch.StartNew();
-			//RunTests();
+			RunTests();
 			DoSamples();
+			parser.Test();
 			watch.Stop();
 			
 			Console.WriteLine("Tests finished in {0}ms, hit enter", watch.ElapsedMilliseconds);

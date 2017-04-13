@@ -49,7 +49,13 @@ namespace LithpBlunt
 			);
 			// )
 			result.Add(def);
-			result.Add(LithpFunctionCall.New("print/*", "Factorial result: ", LithpFunctionCall.New("fac/1", 200)));
+			int n;
+#if DEBUG
+			n = 5;
+#else
+			n = 200;
+#endif
+			result.Add(LithpFunctionCall.New("print/*", "Factorial result: ", LithpFunctionCall.New("fac/1", n)));
 			return result;
 		}
 	}

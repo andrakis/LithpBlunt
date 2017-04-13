@@ -71,19 +71,28 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Samples.cs" />
+    <Compile Include="Serialization\LithpJsonParser.cs" />
     <Compile Include="Serialization\LithpParser.cs" />
     <Compile Include="Serialization\SerializedLithpFunctionDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Samples\complex.ast" />
+    <None Include="Samples\complex.ast">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Samples\complex.lithp" />
-    <None Include="Samples\factorial.ast" />
+    <None Include="Samples\factorial.ast">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Samples\factorial.lithp" />
-    <None Include="Samples\fib.ast" />
+    <None Include="Samples\fib.ast">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Samples\fib.lithp" />
-    <None Include="Samples\scope.ast" />
+    <None Include="Samples\scope.ast">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Samples\scope.lithp" />
     <None Include="scope.ast" />
     <None Include="scope.lithp" />

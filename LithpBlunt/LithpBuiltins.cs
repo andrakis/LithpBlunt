@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LithpBlunt.OpChainMembers;
+using System.Numerics;
 
 namespace LithpBlunt
 {
@@ -192,7 +193,7 @@ namespace LithpBlunt
 		public static LithpPrimitive Def(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			LithpPrimitive name = parameters[0];
+			ILithpPrimitive name = parameters[0];
 			if (name.LithpType() != LithpType.ATOM)
 				throw new ArgumentException("Function name must be an atom");
 			if (parameters[1].LithpType() != LithpType.FN)
@@ -214,6 +215,12 @@ namespace LithpBlunt
 		{
 			LithpOpChain chain = (LithpOpChain)parameters[0];
 			return chain.CloneWithScope(state);
+		}
+
+		public static LithpPrimitive ParseInt (LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			return new LithpInteger(BigInteger.Parse(parameters[0]));
 		}
 
 		public LithpFunctionDefinitionNative this[LithpAtom key] {
