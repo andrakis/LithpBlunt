@@ -88,11 +88,14 @@ namespace LithpBlunt
 			// Initialize LithpBuiltins now
 			LithpBuiltins builtins = new LithpBuiltins();
 			LithpJsonParser parser = new LithpJsonParser();
+			LithpInterpreter interp = new LithpInterpreter();
 
 			var watch = System.Diagnostics.Stopwatch.StartNew();
-			RunTests();
-			DoSamples();
-			parser.Test();
+			//RunTests();
+			//DoSamples();
+			LithpOpChain chain = parser.Test();
+			chain.ImportBuiltins(builtins);
+			interp.Run(chain);
 			watch.Stop();
 			
 			Console.WriteLine("Tests finished in {0}ms, hit enter", watch.ElapsedMilliseconds);

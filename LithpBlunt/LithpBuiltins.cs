@@ -199,6 +199,7 @@ namespace LithpBlunt
 			if (parameters[1].LithpType() != LithpType.FN)
 				throw new ArgumentException("Function body must be a FunctionDefinition");
 			LithpFunctionDefinition body = (LithpFunctionDefinition)parameters[1];
+			body.SetName(parameters[0]);
 			state.Closure.SetImmediate(body.Name, body);
 			return body;
 		}

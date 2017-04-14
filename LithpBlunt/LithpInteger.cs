@@ -17,6 +17,11 @@ namespace LithpBlunt
 			this.value = value;
 		}
 
+		public LithpInteger(string value)
+		{
+			this.value = NumberType.Parse(value);
+		}
+
 		public override LithpType LithpType()
 		{
 			return LithpBlunt.LithpType.INTEGER;

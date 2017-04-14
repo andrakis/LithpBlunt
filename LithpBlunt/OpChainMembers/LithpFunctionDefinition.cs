@@ -66,6 +66,11 @@ namespace LithpBlunt.OpChainMembers
 		public void SetName (string n)
 		{
 			name = n;
+			Match x = Regex.Match(name, @"/(\d+|\*)$");
+			if (x == Match.Empty)
+			{
+				this.name += "/" + arity.Value.ToString();
+			}
 		}
 
 		public LithpPrimitive Invoke(LithpList parameters, LithpOpChain state, LithpInterpreter interp)
@@ -99,7 +104,9 @@ namespace LithpBlunt.OpChainMembers
 
 		protected override string toString()
 		{
-			return "stub:LithpFunctionDefinition::toString()";
+			string result = "[FnDef, params: " + string.Join(",", parameters) + ", body: ";
+			result += body.ToString();
+			return result;
 		}
 	}
 }

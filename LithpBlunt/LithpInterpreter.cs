@@ -56,8 +56,10 @@ namespace LithpBlunt
 				case LithpType.STRING:
 				case LithpType.FN:
 				case LithpType.FN_NATIVE:
-				case LithpType.OPCHAIN:
 					return current;
+				case LithpType.OPCHAIN:
+					LithpOpChain c = new LithpOpChain(chain, (LithpOpChain)current);
+					return Run(c);
 				case LithpType.FUNCTIONCALL:
 					LithpFunctionCall call = (LithpFunctionCall)current;
 					LithpList resolved = ResolveParameters(call, chain);
