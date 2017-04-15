@@ -82,7 +82,7 @@ namespace LithpBlunt
 			LithpOpChain chain = LithpJsonParser.LoadSample(file);
 			chain.ImportBuiltins(Builtins);
 			compileWatch.Stop();
-			Console.WriteLine("Compile for {0} finished in {1}ms",
+			Console.WriteLine("Compile for {1} finished in {0}ms",
 				compileWatch.ElapsedMilliseconds, file);
 			return chain;
 		}
