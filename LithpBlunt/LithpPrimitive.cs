@@ -59,9 +59,13 @@ namespace LithpBlunt
 					postfix = "}";
 					break;
 			}
-			return prefix + ToString() + postfix;
+			return prefix + toLiteral() + postfix;
 		}
 		protected abstract string toString();
+		protected virtual string toLiteral ()
+		{
+			return toString();
+		}
 		public virtual bool compareEqual(LithpPrimitive other)
 		{
 			return false;

@@ -51,9 +51,9 @@ namespace LithpBlunt
 			result.Add(def);
 			int n;
 #if DEBUG
-			n = 5;
+			n = 10;
 #else
-			n = 200;
+			n = 500;
 #endif
 			result.Add(LithpFunctionCall.New("print/*", "Factorial result: ", LithpFunctionCall.New("fac/1", n)));
 			return result;

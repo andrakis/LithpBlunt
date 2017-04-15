@@ -38,7 +38,31 @@ namespace LithpBlunt
 			while (chain.AtEnd() == false)
 			{
 				ILithpOpChainMember current = chain.Next();
-				value = resolve(current, chain);
+				switch(current.LithpType())
+				{
+					case LithpType.OPCHAIN:
+						value = this.Run(new LithpOpChain(chain, (LithpOpChain)current));
+						break;
+					case LithpType.FUNCTIONCALL:
+						LithpFunctionCall call = (LithpFunctionCall)current;
+						LithpList resolved = ResolveParameters(call, chain);
+						value = InvokeResolved(call, resolved, chain);
+						if(value.LithpType() == LithpType.OPCHAIN)
+						{
+							LithpOpChain subchain = (LithpOpChain)value;
+							value = this.Run(new LithpOpChain(chain, subchain));
+						}
+						break;
+					case LithpType.LITERAL:
+						value = ((LithpLiteral)current).Value;
+						break;
+					case LithpType.FN:
+					case LithpType.FN_NATIVE:
+						value = current;
+						break;
+					default:
+						throw new NotImplementedException();
+				}
 			}
 
 			return (LithpPrimitive)value;
@@ -49,6 +73,7 @@ namespace LithpBlunt
 			switch(current.LithpType())
 			{
 				case LithpType.LITERAL:
+					return ((LithpLiteral)current).Value;
 				case LithpType.ATOM:
 				case LithpType.DICT:
 				case LithpType.INTEGER:
@@ -56,14 +81,19 @@ namespace LithpBlunt
 				case LithpType.STRING:
 				case LithpType.FN:
 				case LithpType.FN_NATIVE:
-					return current;
 				case LithpType.OPCHAIN:
-					LithpOpChain c = new LithpOpChain(chain, (LithpOpChain)current);
-					return Run(c);
+					return current;
 				case LithpType.FUNCTIONCALL:
 					LithpFunctionCall call = (LithpFunctionCall)current;
 					LithpList resolved = ResolveParameters(call, chain);
-					return InvokeResolved(call, resolved, chain);
+					LithpPrimitive value = InvokeResolved(call, resolved, chain);
+					if(value.LithpType() == LithpType.OPCHAIN)
+					{
+						LithpOpChain subchain = (LithpOpChain)value;
+						if (subchain.IsImmediate)
+							value = this.Run(new LithpOpChain(chain, subchain));
+					}
+					return value;
 				case LithpType.VAR:
 					// TODO: Could just lookup the value now
 					LithpVariableReference v = (LithpVariableReference)current;
