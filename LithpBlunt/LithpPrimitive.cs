@@ -30,7 +30,9 @@ namespace LithpBlunt
 		LithpType LithpType();
 	}
 
-	public abstract class LithpPrimitive : ILithpPrimitive
+	/** TODO: This is a bit of a hack. LithpPrimitive implements interface ILithpOpChainMember,
+	 *        which is a sub interface of ILithpPrimitive.*/
+	public abstract class LithpPrimitive : ILithpPrimitive, ILithpOpChainMember
 	{
 		public override string ToString()
 		{
@@ -57,9 +59,13 @@ namespace LithpBlunt
 					postfix = "}";
 					break;
 			}
-			return prefix + ToString() + postfix;
+			return prefix + toLiteral() + postfix;
 		}
 		protected abstract string toString();
+		protected virtual string toLiteral ()
+		{
+			return toString();
+		}
 		public virtual bool compareEqual(LithpPrimitive other)
 		{
 			return false;

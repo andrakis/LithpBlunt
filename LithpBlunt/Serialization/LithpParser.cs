@@ -92,7 +92,7 @@ namespace LithpBlunt.Serialization
 
 	public class LithpParser
 	{
-		protected Dictionary<string, string> arityBuiltins = new Dictionary<string, string>()
+		public static Dictionary<string, string> arityBuiltins = new Dictionary<string, string>()
 		{
 			{"print", "*" },
 			{"and", "*" },
@@ -140,9 +140,9 @@ namespace LithpBlunt.Serialization
 #endif
 		}
 
-		public string ParseEscapes (string s)
+		public static string ParseEscapes (string s)
 		{
-			string result = Regex.Replace(s, @"\(.)", (match) =>
+			string result = Regex.Replace(s, @"\\(.)", (match) =>
 			{
 				switch(match.Groups[1].Value)
 				{

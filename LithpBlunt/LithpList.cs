@@ -47,6 +47,23 @@ namespace LithpBlunt
 			return result;
 		}
 
+		protected override string toLiteral()
+		{
+			LithpList mapped = Map((v) => v.ToLiteral());
+			string result = "";
+			bool first = true;
+			foreach(var x in mapped)
+			{
+				if (!first)
+					result += " ";
+				else
+					first = false;
+				result += x.ToLiteral();
+			}
+
+			return result;
+		}
+
 		public T this[int index] {
 			get {
 				return ((IList<T>)value)[index];

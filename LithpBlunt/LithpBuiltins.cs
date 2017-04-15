@@ -97,26 +97,31 @@ namespace LithpBlunt
 			return Values[0] == LithpAtom.True ? Values[1] : Values[2];
 		}
 
+		protected static LithpPrimitive getIfResult(LithpPrimitive value)
+		{
+			if (value.LithpType() == LithpType.OPCHAIN)
+				return ((LithpOpChain)value).CallImmediate();
+			return value;
+		}
+
 		public static LithpPrimitive If2(LithpList Values, LithpOpChain state,
 			LithpInterpreter interp)
 		{
 			if (Values[0] == LithpAtom.True)
-				return interp.Run((LithpOpChain)Values[1]);
+				return getIfResult(Values[1]);
 			return LithpAtom.Nil;
 		}
 
 		public static LithpPrimitive If3(LithpList Values, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			LithpOpChain chain = (LithpOpChain)(Values[0] == LithpAtom.True ?
-				Values[1] : Values[2]);
-			return interp.Run(new LithpOpChain(state, chain));
+			return getIfResult((Values[0] == LithpAtom.True) ? Values[1] : Values[2]);
 		}
 
 		public static LithpPrimitive Else(LithpList Values, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			return (LithpOpChain)Values[0];
+			return Values[0];
 		}
 
 		public static LithpPrimitive Recurse(LithpList Values, LithpOpChain state,
@@ -199,6 +204,7 @@ namespace LithpBlunt
 			if (parameters[1].LithpType() != LithpType.FN)
 				throw new ArgumentException("Function body must be a FunctionDefinition");
 			LithpFunctionDefinition body = (LithpFunctionDefinition)parameters[1];
+			body.SetName(parameters[0]);
 			state.Closure.SetImmediate(body.Name, body);
 			return body;
 		}

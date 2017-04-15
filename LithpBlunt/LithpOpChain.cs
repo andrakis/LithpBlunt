@@ -19,6 +19,14 @@ namespace LithpBlunt
 
 		public readonly bool Scoped;
 
+		public bool IsImmediate = false;
+		public LithpOpChain CallImmediate()
+		{
+			LithpOpChain ch = new LithpOpChain(Parent, this);
+			ch.IsImmediate = true;
+			return ch;
+		}
+
 		public LithpOpChain()
 		{
 			Closure = new LithpClosure();

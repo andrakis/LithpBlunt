@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,26 +74,23 @@ namespace LithpBlunt
 			interp.Run(chain);
 		}
 
-		public static void DoSamples()
-		{
-			LithpInterpreter interp = new LithpInterpreter();
-			LithpBuiltins builtins = new LithpBuiltins();
-			Console.WriteLine("Attempting factorial sample");
-			LithpOpChain fac = Samples.Factorial();
-			fac.ImportBuiltins(builtins);
-			interp.Run(fac);
-		}
-
 		static void Main(string[] args)
 		{
 			// Initialize LithpBuiltins now
 			LithpBuiltins builtins = new LithpBuiltins();
-			LithpJsonParser parser = new LithpJsonParser();
+			LithpInterpreter interp = new LithpInterpreter();
 
-			var watch = System.Diagnostics.Stopwatch.StartNew();
+			var watch = Stopwatch.StartNew();
 			RunTests();
-			DoSamples();
-			parser.Test();
+			var compileWatch = Stopwatch.StartNew();
+			LithpOpChain chain = LithpJsonParser.Test();
+			chain.ImportBuiltins(builtins);
+			compileWatch.Stop();
+			Console.WriteLine("Compile finished in {0}ms", compileWatch.ElapsedMilliseconds);
+			var runWatch = Stopwatch.StartNew();
+			interp.Run(chain);
+			runWatch.Stop();
+			Console.WriteLine("Run finished in {0}ms", runWatch.ElapsedMilliseconds);
 			watch.Stop();
 			
 			Console.WriteLine("Tests finished in {0}ms, hit enter", watch.ElapsedMilliseconds);
