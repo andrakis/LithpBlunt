@@ -37,6 +37,19 @@ namespace LithpBlunt
 			return value.ToString();
 		}
 
+		protected override LithpPrimitive cast(LithpType newType)
+		{
+			switch(newType)
+			{
+				case LithpBlunt.LithpType.STRING:
+					return value.ToString();
+				case LithpBlunt.LithpType.FLOAT:
+					return new LithpFloat(value.ToString());
+				default:
+					throw new NotImplementedException();
+			}
+		}
+
 		protected override LithpPrimitive operatorPlus(LithpPrimitive other)
 		{
 			LithpInteger iOther = (LithpInteger)other;

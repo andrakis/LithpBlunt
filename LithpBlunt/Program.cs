@@ -92,6 +92,8 @@ namespace LithpBlunt
 			// Initialize LithpBuiltins now
 			LithpBuiltins builtins = new LithpBuiltins();
 			LithpInterpreter interp = new LithpInterpreter();
+			// Initialize parser
+			LithpJsonParser.Test();
 
 			var watch = Stopwatch.StartNew();
 			if(false) RunTests();

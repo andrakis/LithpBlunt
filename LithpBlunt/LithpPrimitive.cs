@@ -10,6 +10,7 @@ namespace LithpBlunt
 	public enum LithpType
 	{
 		INTEGER,
+		FLOAT,
 		ATOM,
 		STRING,
 		LIST,
@@ -28,6 +29,7 @@ namespace LithpBlunt
 		string ToString();
 		string ToLiteral();
 		LithpType LithpType();
+		LithpPrimitive Cast(LithpType newType);
 	}
 
 	/** TODO: This is a bit of a hack. LithpPrimitive implements interface ILithpOpChainMember,
@@ -61,6 +63,16 @@ namespace LithpBlunt
 			}
 			return prefix + toLiteral() + postfix;
 		}
+		protected virtual LithpPrimitive cast (LithpType newType)
+		{
+			throw new NotImplementedException();
+		}
+		public LithpPrimitive Cast(LithpType newType)
+		{
+			if (newType == LithpType())
+				return this;
+			return cast(newType);
+		}
 		protected abstract string toString();
 		protected virtual string toLiteral ()
 		{
@@ -86,12 +98,9 @@ namespace LithpBlunt
 
 		protected static bool compareEqual(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
-			if (a.LithpType() != b.LithpType())
-				return false;
+			if ((object)a == null || (object)b == null)
+				return (object)a == null && (object)b == null;
+			b = b.Cast(a.LithpType());
 			return a.compareEqual(b);
 		}
 
@@ -101,92 +110,55 @@ namespace LithpBlunt
 		}
 		public static bool operator !=(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
-			if (a.LithpType() != b.LithpType())
-				return true;
+			b = b.Cast(a.LithpType());
 			return !compareEqual(a, b);
 		}
 
 		public static bool operator <(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
-			if (a.LithpType() != b.LithpType())
-				return false;
+			b = b.Cast(a.LithpType());
 			return a.compareLessThan(b);
 		}
 
 		public static bool operator >(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
-			if (a.LithpType() != b.LithpType())
-				return false;
+			b = b.Cast(a.LithpType());
 			return a.compareMoreThan(b);
 		}
 
 		public static bool operator <=(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
-			if (a.LithpType() != b.LithpType())
-				return false;
+			b = b.Cast(a.LithpType());
 			return a.compareLessThan(b) || a.compareEqual(b);
 		}
 
 		public static bool operator >=(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
-			if (a.LithpType() != b.LithpType())
-				return false;
+			b = b.Cast(a.LithpType());
 			return a.compareMoreThan(b) || a.compareEqual(b);
 		}
 
 		public static LithpPrimitive operator +(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
+			b = b.Cast(a.LithpType());
 			return a.operatorPlus(b);
 		}
 
 		public static LithpPrimitive operator -(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
+			b = b.Cast(a.LithpType());
 			return a.operatorMinus(b);
 		}
 
 		public static LithpPrimitive operator /(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
+			b = b.Cast(a.LithpType());
 			return a.operatorDivide(b);
 		}
 
 		public static LithpPrimitive operator *(LithpPrimitive a, LithpPrimitive b)
 		{
-			if (a.LithpType() == LithpBlunt.LithpType.LITERAL)
-				a = ((LithpLiteral)a).Value;
-			if (b.LithpType() == LithpBlunt.LithpType.LITERAL)
-				b = ((LithpLiteral)b).Value;
+			b = b.Cast(a.LithpType());
 			return a.operatorMultiply(b);
 		}
 

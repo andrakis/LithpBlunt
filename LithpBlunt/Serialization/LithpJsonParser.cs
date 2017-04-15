@@ -128,7 +128,12 @@ namespace LithpBlunt.Serialization
 			}
 			else if (cls.HasFlag(Classification.NUMBER))
 			{
-				return new LithpLiteral(new LithpInteger(strV));
+				if (cls.HasFlag(Classification.NUMBER_INTEGER))
+					return new LithpLiteral(new LithpInteger(strV));
+				else if (cls.HasFlag(Classification.NUMBER_FLOAT))
+					return new LithpLiteral(new LithpFloat(strV));
+				else
+					throw new NotImplementedException();
 			}
 			else if (cls.HasFlag(Classification.ATOM))
 				return new LithpLiteral(LithpAtom.Atom(strV));

@@ -37,6 +37,21 @@ namespace LithpBlunt
 			return Value;
 		}
 
+		protected override LithpPrimitive cast(LithpType newType)
+		{
+			switch(newType)
+			{
+				case LithpBlunt.LithpType.INTEGER:
+					return new LithpInteger(Value);
+				case LithpBlunt.LithpType.FLOAT:
+					return new LithpFloat(Value);
+				case LithpBlunt.LithpType.ATOM:
+					return LithpAtom.Atom(Value);
+				default:
+					throw new NotImplementedException();
+			}
+		}
+
 		public static implicit operator LithpString(string value)
 		{
 			return new LithpString(value);

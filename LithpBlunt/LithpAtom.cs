@@ -58,6 +58,21 @@ namespace LithpBlunt
 			return Id == otherAtom.Id;
 		}
 
+		protected override LithpPrimitive cast(LithpType newType)
+		{
+			switch(newType)
+			{
+				case LithpBlunt.LithpType.STRING:
+					return Name;
+				case LithpBlunt.LithpType.INTEGER:
+					return Id;
+				case LithpBlunt.LithpType.FLOAT:
+					return new LithpFloat((double)Id);
+				default:
+					throw new NotImplementedException();
+			}
+		}
+
 		protected static int counter = 0;
 		public static LithpAtom Atom(string name)
 		{

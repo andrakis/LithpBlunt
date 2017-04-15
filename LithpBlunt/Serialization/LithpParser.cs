@@ -86,7 +86,9 @@ namespace LithpBlunt.Serialization
 		/// <summary>
 		/// #Arg1,Arg2  this: ::
 		/// </summary>
-		FUNCTION_BODY = 1 << 17
+		FUNCTION_BODY = 1 << 17,
+		NUMBER_INTEGER = 1 << 18,
+		NUMBER_FLOAT = 1 << 19
 	}
 	#endregion
 
@@ -177,8 +179,10 @@ namespace LithpBlunt.Serialization
 						result = Classification.ATOM;
 					else if (Regex.IsMatch(phrase, "^[A-Z][A-Za-z0-9_]*$"))
 						result = Classification.VARIABLE;
+					else if (Regex.IsMatch(phrase, "^-?[0-9e][0-9e]*$"))
+						result = Classification.NUMBER | Classification.ATOM | Classification.NUMBER_INTEGER;
 					else if (Regex.IsMatch(phrase, "^-?[0-9e][0-9e.]*$"))
-						result = Classification.NUMBER | Classification.ATOM;
+						result = Classification.NUMBER | Classification.ATOM | Classification.NUMBER_FLOAT;
 					else if (phrase.Length > 1 && Regex.IsMatch(phrase, "^\".*\"$"))
 						result = Classification.STRING_DOUBLE;
 					else if (phrase.Length > 1 && Regex.IsMatch(phrase, "^'.*'$"))
