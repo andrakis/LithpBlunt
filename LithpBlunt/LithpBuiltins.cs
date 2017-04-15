@@ -32,6 +32,8 @@ namespace LithpBlunt
 			builtin("if", If3, "Test", "Action", "Else");
 			builtin("?", Unary, "Test", "Action", "Else");
 			builtin("else", Else, "OpChain");
+			builtin("call/*", Call);
+			builtin("assert", Assert, "Value");
 		}
 
 		protected static LithpFunctionDefinitionNative builtin(string name, LithpFunctionDefinitionDelegate fn, params string[] args)
@@ -219,14 +221,65 @@ namespace LithpBlunt
 		public static LithpPrimitive Scope(LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			LithpOpChain chain = (LithpOpChain)parameters[0];
-			return chain.CloneWithScope(state);
+			LithpFunctionDefinition def = (LithpFunctionDefinition)parameters[0];
+			return def.CloneWithScope(state);
 		}
 
 		public static LithpPrimitive ParseInt (LithpList parameters, LithpOpChain state,
 			LithpInterpreter interp)
 		{
-			return new LithpInteger(BigInteger.Parse(parameters[0]));
+			return new LithpInteger(parameters[0]);
+		}
+
+		public static LithpPrimitive Call(LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			LithpPrimitive def = parameters[0];
+			LithpList defParams = (LithpList)Tail(LithpList.New(parameters), state, interp);
+			switch(def.LithpType())
+			{
+				case LithpType.FN_NATIVE:
+					return ((LithpFunctionDefinitionNative)def).Invoke(defParams, state, interp);
+				case LithpType.FN:
+					return ((LithpFunctionDefinition)def).Invoke(defParams, state, interp);
+				case LithpType.ATOM:
+				case LithpType.STRING:
+					string strName = def.ToString();
+					ILithpFunctionDefinition search;
+					if((object)state.Closure.TopMost != null && state.Closure.TopMost.IsDefined(strName))
+					{
+						search = (ILithpFunctionDefinition)state.Closure.TopMost[strName];
+					}
+					else if(state.Closure.IsDefined(strName))
+					{
+						search = (ILithpFunctionDefinition)state.Closure[strName];
+					}
+					else
+					{
+						string arityStar = strName + "/*";
+						if ((object)state.Closure.TopMost != null && state.Closure.TopMost.IsDefined(strName))
+						{
+							search = (ILithpFunctionDefinition)state.Closure.TopMost[strName];
+						}
+						else if (state.Closure.IsDefined(strName))
+						{
+							search = (ILithpFunctionDefinition)state.Closure[strName];
+						}
+						else
+							throw new MissingMethodException();
+					}
+					return search.Invoke(defParams, state, interp);
+				default:
+					throw new NotImplementedException();
+			}
+		}
+
+		public static LithpPrimitive Assert(LithpList parameters, LithpOpChain state,
+			LithpInterpreter interp)
+		{
+			if (parameters[0] == LithpAtom.False)
+				throw new Exception("Assert failed");
+			return LithpAtom.Nil;
 		}
 
 		public LithpFunctionDefinitionNative this[LithpAtom key] {

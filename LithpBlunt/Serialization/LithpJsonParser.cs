@@ -21,7 +21,11 @@ namespace LithpBlunt.Serialization
 
 		public static LithpOpChain Test()
 		{
-			string complex = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "samples", "factorial.ast"));
+			return LoadSample("factorial.ast");
+		}
+
+		public static LithpOpChain LoadSample(string file) {
+			string complex = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "samples", file));
 			dynamic jsonData = JsonConvert.DeserializeObject<dynamic>(complex);
 			LithpJsonParser parser = new LithpJsonParser(jsonData);
 			return parser.Finalize();

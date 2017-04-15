@@ -27,11 +27,13 @@ namespace LithpBlunt.OpChainMembers
 			get { return name; }
 		}
 
+		protected static int idCounter = 0;
+
 		public LithpFunctionDefinition(LithpOpChain parent, string name,
 			LithpOpChain body, string[] parameters)
 		{
 			this.name = name;
-			this.body = new LithpOpChain(parent, body);
+			this.body = body;
 			this.parameters = parameters;
 			Match x = Regex.Match(name, @"/(\d+|\*)$");
 			if (x == Match.Empty)
@@ -51,6 +53,13 @@ namespace LithpBlunt.OpChainMembers
 					arity = int.Parse(strArity);
 				}
 			}
+		}
+
+		public LithpFunctionDefinition CloneWithScope(LithpOpChain state)
+		{
+			LithpOpChain body = this.body.CloneWithScope(state);
+			LithpFunctionDefinition fnNew = new LithpFunctionDefinition(body.Parent, name, body, parameters);
+			return fnNew;
 		}
 
 		public static LithpFunctionDefinition New(LithpOpChain parent, string name,

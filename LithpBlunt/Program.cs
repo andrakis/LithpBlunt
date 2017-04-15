@@ -74,6 +74,19 @@ namespace LithpBlunt
 			interp.Run(chain);
 		}
 
+		static LithpInterpreter Interp = new LithpInterpreter();
+		static LithpBuiltins Builtins = new LithpBuiltins();
+		static LithpOpChain LoadSample(string file)
+		{
+			var compileWatch = Stopwatch.StartNew();
+			LithpOpChain chain = LithpJsonParser.LoadSample(file);
+			chain.ImportBuiltins(Builtins);
+			compileWatch.Stop();
+			Console.WriteLine("Compile for {0} finished in {1}ms",
+				compileWatch.ElapsedMilliseconds, file);
+			return chain;
+		}
+
 		static void Main(string[] args)
 		{
 			// Initialize LithpBuiltins now
@@ -81,14 +94,14 @@ namespace LithpBlunt
 			LithpInterpreter interp = new LithpInterpreter();
 
 			var watch = Stopwatch.StartNew();
-			RunTests();
-			var compileWatch = Stopwatch.StartNew();
-			LithpOpChain chain = LithpJsonParser.Test();
-			chain.ImportBuiltins(builtins);
-			compileWatch.Stop();
-			Console.WriteLine("Compile finished in {0}ms", compileWatch.ElapsedMilliseconds);
+			if(false) RunTests();
+			var sampleFactorial = LoadSample("factorial.ast");
+			var sampleScope = LoadSample("scope.ast");
+			var sampleComplex = LoadSample("complex.ast");
 			var runWatch = Stopwatch.StartNew();
-			interp.Run(chain);
+			interp.Run(sampleFactorial);
+			interp.Run(sampleScope);
+			interp.Run(sampleComplex);
 			runWatch.Stop();
 			Console.WriteLine("Run finished in {0}ms", runWatch.ElapsedMilliseconds);
 			watch.Stop();
