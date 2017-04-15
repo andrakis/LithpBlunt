@@ -46,12 +46,16 @@ namespace LithpBlunt
 					case LithpType.FUNCTIONCALL:
 						LithpFunctionCall call = (LithpFunctionCall)current;
 						LithpList resolved = ResolveParameters(call, chain);
+						depth++;
 						value = InvokeResolved(call, resolved, chain);
 						if(value.LithpType() == LithpType.OPCHAIN)
 						{
 							LithpOpChain subchain = (LithpOpChain)value;
+							depth++;
 							value = this.Run(new LithpOpChain(chain, subchain));
+							depth--;
 						}
+						depth--;
 						break;
 					case LithpType.LITERAL:
 						value = ((LithpLiteral)current).Value;
@@ -91,7 +95,11 @@ namespace LithpBlunt
 					{
 						LithpOpChain subchain = (LithpOpChain)value;
 						if (subchain.IsImmediate)
+						{
+							depth++;
 							value = this.Run(new LithpOpChain(chain, subchain));
+							depth--;
+						}
 					}
 					return value;
 				case LithpType.VAR:
