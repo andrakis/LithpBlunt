@@ -393,13 +393,13 @@ namespace LithpBlunt
 					else
 					{
 						string arityStar = strName + "/*";
-						if ((object)state.Closure.TopMost != null && state.Closure.TopMost.IsDefined(strName))
+						if ((object)state.Closure.TopMost != null && state.Closure.TopMost.IsDefined(arityStar))
 						{
-							search = (ILithpFunctionDefinition)state.Closure.TopMost[strName];
+							search = (ILithpFunctionDefinition)state.Closure.TopMost[arityStar];
 						}
-						else if (state.Closure.IsDefined(strName))
+						else if (state.Closure.IsDefined(arityStar))
 						{
-							search = (ILithpFunctionDefinition)state.Closure[strName];
+							search = (ILithpFunctionDefinition)state.Closure[arityStar];
 						}
 						else
 							throw new MissingMethodException();
