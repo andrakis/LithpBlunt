@@ -1,0 +1,8 @@
+% An entry for a code-golf challenge about pairable strings.
+(
+	(def f #S::((? (!= (null) (match S "^((.+)\\2)+$")) true false)))
+	(print (f "aa"))
+	(print (f "aabaaababbbaba"))
+	(print (f "aaababbabbabbbababbaabaabaababaaba"))
+	(print (f "ba"))
+)

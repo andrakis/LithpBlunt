@@ -13,7 +13,7 @@ namespace LithpBlunt.OpChainMembers
 	/// </summary>
 	public class LithpFunctionDefinition : LithpOpChainMember, ILithpFunctionDefinition
 	{
-		protected readonly int? arity;
+		protected int? arity;
 		public int? Arity {
 			get { return arity; }
 		}
@@ -79,6 +79,9 @@ namespace LithpBlunt.OpChainMembers
 			if (x == Match.Empty)
 			{
 				this.name += "/" + arity.Value.ToString();
+			} else
+			{
+				arity = null;
 			}
 		}
 
@@ -95,7 +98,8 @@ namespace LithpBlunt.OpChainMembers
 				parameters = LithpList.New(parameters);
 			parameters.Each((Value, Index) =>
 			{
-				chain.Closure.SetImmediate(this.parameters[Index], Value);
+				if(Index < this.parameters.Length)
+					chain.Closure.SetImmediate(this.parameters[Index], Value);
 			});
 			chain.FunctionEntry = name;
 			return interp.Run(chain);

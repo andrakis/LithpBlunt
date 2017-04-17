@@ -1,0 +1,117 @@
+[
+	[
+		[
+			"print",
+			"\"Definitions:\"",
+			[
+				"definitions"
+			]
+		],
+		[
+			"define",
+			"test",
+			"true"
+		],
+		[
+			"print",
+			"\"Definitions:\"",
+			[
+				"definitions"
+			]
+		],
+		[
+			"if",
+			[
+				"defined",
+				"test"
+			],
+			[
+				[
+					"print",
+					"\"'test' is defined\""
+				]
+			],
+			[
+				"else",
+				[
+					[
+						"print",
+						"\"'test' is not defined!\""
+					]
+				]
+			]
+		],
+		[
+			"print",
+			"\"Value of 'test':\"",
+			[
+				"get-def",
+				"test"
+			]
+		],
+		[
+			"if",
+			[
+				"defined",
+				"'DEBUG'"
+			],
+			[
+				[
+					"print",
+					"\"DEBUG mode is on\""
+				]
+			],
+			[
+				"else",
+				[
+					[
+						"print",
+						"\"DEBUG mode is not on.\""
+					]
+				]
+			]
+		],
+		[
+			"var",
+			"MySecretValue",
+			"\"A secret value\""
+		],
+		[
+			"var",
+			"Fn",
+			{
+				"code": [
+					[
+						"MySecretValue"
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"print",
+			"\"Call one: \"",
+			[
+				"call",
+				"Fn"
+			]
+		],
+		[
+			"define",
+			"get-secret-value",
+			"Fn"
+		],
+		[
+			"print",
+			"\"Call two: \"",
+			[
+				"call",
+				[
+					"get-def",
+					"get-secret-value"
+				]
+			]
+		]
+	]
+]

@@ -1,0 +1,1 @@
+[[["import","lists"],["import","symbols"],["var","Operators",["list","+","-","/","*"]],["var","A","5"],["var","B","10"],["each","Operators",["scope",{"code":[[["print",["+","A","\" \"","Op","\" \"","B","\" = \"",["call-fn","Op","A","B"]]]]],"_fndef":true,"_fnparams":["Op"]}]]]]

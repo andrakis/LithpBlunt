@@ -11,16 +11,19 @@ namespace LithpBlunt
 		/// <summary>
 		/// The parent closure (scoped variables)
 		/// </summary>
-		public readonly LithpClosure Parent;
+		public LithpClosure Parent;
 		/// <summary>
 		/// The topmost closure, where functions are defined
 		/// </summary>
-		public readonly LithpClosure TopMost;
+		public LithpClosure TopMost;
 
 		/// <summary>
 		/// Use our dictionary for values.
 		/// </summary>
 		protected LithpDict closure = new LithpDict();
+
+		protected static int instanceId = 0;
+		public readonly int InstanceId = instanceId++;
 
 		/// <summary>
 		/// Create a new closure with no parent
@@ -28,7 +31,7 @@ namespace LithpBlunt
 		public LithpClosure()
 		{
 			Parent = null;
-			TopMost = null;
+			TopMost = this;
 		}
 
 		/// <summary>
@@ -38,7 +41,7 @@ namespace LithpBlunt
 		public LithpClosure(LithpClosure parent)
 		{
 			Parent = parent;
-			TopMost = parent.TopMost;
+			TopMost = parent.TopMost ?? this;
 		}
 
 		public override LithpType LithpType()
@@ -84,7 +87,7 @@ namespace LithpBlunt
 		{
 			if (IsDefined(name))
 			{
-				Set(name, value);
+				SetImmediate(name, value);
 				return true;
 			}
 			else if (Parent)
@@ -109,7 +112,17 @@ namespace LithpBlunt
 
 		protected override string toString()
 		{
-			return "stub:LithpClosure::toString()";
+			string result = "Closure::" + InstanceId.ToString() + "::{";
+			bool first = true;
+			foreach (var x in closure)
+			{
+				if (first)
+					first = false;
+				else
+					result += ", ";
+				result += x.Key + "=>" + x.Value;
+			}
+			return result;
 		}
 	}
 }

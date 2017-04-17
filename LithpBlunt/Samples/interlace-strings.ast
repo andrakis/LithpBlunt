@@ -1,0 +1,153 @@
+[
+	[
+		[
+			"def",
+			"f",
+			{
+				"code": [
+					[
+						[
+							"invoke",
+							"P",
+							"\"map\"",
+							[
+								"js-bridge",
+								{
+									"code": [
+										[
+											"replace",
+											"W",
+											[
+												"regex",
+												"\".\"",
+												"\"g\""
+											],
+											[
+												"js-bridge",
+												{
+													"code": [
+														[
+															"index",
+															[
+																"index",
+																"P",
+																[
+																	"&",
+																	[
+																		"+",
+																		"I",
+																		"J"
+																	],
+																	"1"
+																]
+															],
+															"J"
+														]
+													],
+													"_fndef": true,
+													"_fnparams": [
+														"C",
+														"J"
+													]
+												}
+											]
+										]
+									],
+									"_fndef": true,
+									"_fnparams": [
+										"W",
+										"I"
+									]
+								}
+							]
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"P"
+				]
+			}
+		],
+		[
+			"def",
+			"f",
+			{
+				"code": [
+					[
+						[
+							"invoke",
+							"P",
+							"\"map\"",
+							[
+								"js-bridge",
+								{
+									"code": [
+										[
+											"replace",
+											"W",
+											[
+												"regex",
+												"\".\"",
+												"\"g\""
+											],
+											[
+												"js-bridge",
+												{
+													"code": [
+														[
+															"index",
+															[
+																"index",
+																"P",
+																[
+																	"&",
+																	[
+																		"+",
+																		"I",
+																		"J"
+																	],
+																	"1"
+																]
+															],
+															"J"
+														]
+													],
+													"_fndef": true,
+													"_fnparams": [
+														"C",
+														"J"
+													]
+												}
+											]
+										]
+									],
+									"_fndef": true,
+									"_fnparams": [
+										"W",
+										"I"
+									]
+								}
+							]
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"P"
+				]
+			}
+		],
+		[
+			"print",
+			[
+				"f",
+				[
+					"list",
+					"\"Hello,\"",
+					"\"world!\""
+				]
+			]
+		]
+	]
+]

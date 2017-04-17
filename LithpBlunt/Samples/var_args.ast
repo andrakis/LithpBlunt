@@ -1,0 +1,32 @@
+[
+	[
+		[
+			"def",
+			"count-args/*",
+			{
+				"code": [
+					[
+						[
+							"print",
+							"\"Args length: \"",
+							[
+								"length",
+								"Args"
+							]
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"Args"
+				]
+			}
+		],
+		[
+			"count-args",
+			"foo",
+			"bar",
+			"yeah"
+		]
+	]
+]

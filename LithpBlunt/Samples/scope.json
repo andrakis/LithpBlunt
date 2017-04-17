@@ -1,0 +1,1 @@
+[[["def","add",{"code":[[["scope",{"code":[[["+","A","B"]]],"_fndef":true,"_fnparams":["B"]}]]],"_fndef":true,"_fnparams":["A"]}],["var","Add5",["add","5"]],["var","Add10",["add","10"]],["var","N","10"],["print","\"Add5 with \"","N","\": \"",["call","Add5","N"]],["print","\"Add10 with \"","N","\": \"",["call","Add10","N"]],["assert",["==","15",["call","Add5","10"]]]]]

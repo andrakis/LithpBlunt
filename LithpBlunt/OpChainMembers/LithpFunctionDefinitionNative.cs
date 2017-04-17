@@ -43,11 +43,6 @@ namespace LithpBlunt.OpChainMembers
 		/// <param name="interp"></param>
 		/// <returns></returns>
 		LithpPrimitive Invoke(LithpList parameters, LithpOpChain state, LithpInterpreter interp);
-		/// <summary>
-		/// Get the inner type
-		/// </summary>
-		/// <returns></returns>
-		LithpType LithpType();
 	}
 
 	/// <summary>

@@ -198,6 +198,7 @@ namespace LithpBlunt.Serialization
 				// Must be an OpChain
 				parserDebug(" PARSE TO OPCHAIN");
 				LithpOpChain newChain = new LithpOpChain(chain);
+				newChain.Closure.TopMost = chain.Closure.TopMost ?? chain.Closure;
 				for(int i = 0; i < curr.Count; i++)
 				{
 					parserDebug("Member {0} of chain: {1}", i, curr[i]);

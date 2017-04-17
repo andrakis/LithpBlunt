@@ -100,16 +100,24 @@ namespace LithpBlunt
 			var sampleFactorial = LoadSample("factorial.ast");
 			var sampleScope = LoadSample("scope.ast");
 			var sampleComplex = LoadSample("complex.ast");
+			var sampleIntegral2 = LoadSample("integral2.ast");
+			var sampleWhile = LoadSample("while.ast");
 			var runWatch = Stopwatch.StartNew();
 			interp.Run(sampleFactorial);
 			interp.Run(sampleScope);
 			interp.Run(sampleComplex);
+			interp.Run(sampleIntegral2);
+			interp.Run(sampleWhile);
+			interp.Run(LoadSample("var_args.ast"));
+			interp.Run(LoadSample("recurse.ast"));
 			runWatch.Stop();
-			Console.WriteLine("Run finished in {0}ms", runWatch.ElapsedMilliseconds);
+			Console.WriteLine("Run finished: {0} function calls in {1}ms", LithpInterpreter.FunctionCalls, runWatch.ElapsedMilliseconds);
 			watch.Stop();
-			
+
 			Console.WriteLine("Tests finished in {0}ms, hit enter", watch.ElapsedMilliseconds);
+#if DEBUG
 			Console.ReadLine();
+#endif
 		}
 	}
 }

@@ -1,0 +1,1 @@
+[[["import","\"lists\""],["def","f",{"code":[[["each",["seq","1","10"],{"code":[[["print","N"]]],"_fndef":true,"_fnparams":["N"]}]]],"_fndef":true,"_fnparams":[]}],["def","x",{"code":[[["def","y",{"code":[[["print","N"],["if",["<","N","10"],[["y",["+","N","1"]]]]]],"_fndef":true,"_fnparams":["N"]}],["y","1"]]],"_fndef":true,"_fnparams":[]}],["f"]]]

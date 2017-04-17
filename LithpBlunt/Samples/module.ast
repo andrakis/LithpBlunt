@@ -1,0 +1,105 @@
+[
+	[
+		[
+			"var",
+			"Path",
+			[
+				"+",
+				[
+					"get-def",
+					"__dirname"
+				],
+				"\"/module_lib\""
+			]
+		],
+		[
+			"print",
+			"\"Path to module-lib:\"",
+			"Path"
+		],
+		[
+			"try",
+			[
+				[
+					"import",
+					"Path"
+				]
+			],
+			[
+				"catch",
+				{
+					"code": [
+						[
+							[
+								"import",
+								"\"samples/module_lib\""
+							]
+						]
+					],
+					"_fndef": true,
+					"_fnparams": []
+				}
+			]
+		],
+		[
+			"print",
+			"\"Add 2+2:\"",
+			[
+				"add",
+				"2",
+				"2"
+			]
+		],
+		[
+			"var",
+			"Add5",
+			[
+				"add",
+				"5"
+			]
+		],
+		[
+			"print",
+			"\"Add 5+2:\"",
+			[
+				"call",
+				"Add5",
+				"2"
+			]
+		],
+		[
+			"print",
+			"\"Module value:\"",
+			[
+				"getMyValue"
+			]
+		],
+		[
+			"var",
+			"MyValue",
+			"1"
+		],
+		[
+			"print",
+			"\"Call with two:\"",
+			[
+				"callWith2",
+				{
+					"code": [
+						[
+							[
+								"+",
+								"MyValue",
+								"Two"
+							]
+						]
+					],
+					"_fndef": true,
+					"_fnparams": [
+						"Two"
+					]
+				}
+			]
+		]
+	]
+]

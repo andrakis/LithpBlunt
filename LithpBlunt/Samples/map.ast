@@ -1,0 +1,151 @@
+[
+	[
+		[
+			"def",
+			"map",
+			{
+				"code": [
+					[
+						[
+							"var",
+							"Result",
+							[
+								"list"
+							]
+						],
+						[
+							"var",
+							"MapInner",
+							[
+								"scope",
+								{
+									"code": [
+										[
+											[
+												"set",
+												"Result",
+												[
+													"++",
+													"Result",
+													[
+														"call",
+														"Callback",
+														"Head"
+													]
+												]
+											],
+											[
+												"if",
+												[
+													"!=",
+													"0",
+													[
+														"length",
+														"Tail"
+													]
+												],
+												[
+													[
+														"call",
+														"MapInner",
+														[
+															"head",
+															"Tail"
+														],
+														[
+															"tail",
+															"Tail"
+														]
+													]
+												]
+											]
+										]
+									],
+									"_fndef": true,
+									"_fnparams": [
+										"Head",
+										"Tail"
+									]
+								}
+							]
+						],
+						[
+							"call",
+							"MapInner",
+							[
+								"head",
+								"List"
+							],
+							[
+								"tail",
+								"List"
+							]
+						],
+						[
+							"Result"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"List",
+					"Callback"
+				]
+			}
+		],
+		[
+			"print",
+			[
+				"map",
+				[
+					"list",
+					"1",
+					"2",
+					"3"
+				],
+				{
+					"code": [
+						[
+							[
+								"+",
+								"N",
+								"1"
+							]
+						]
+					],
+					"_fndef": true,
+					"_fnparams": [
+						"N"
+					]
+				}
+			]
+		],
+		[
+			"print",
+			[
+				"map",
+				[
+					"list",
+					"1",
+					"2",
+					"3"
+				],
+				{
+					"code": [
+						[
+							[
+								"*",
+								"N",
+								"2"
+							]
+						]
+					],
+					"_fndef": true,
+					"_fnparams": [
+						"N"
+					]
+				}
+			]
+		]
+	]
+]

@@ -58,7 +58,7 @@ namespace LithpBlunt
 					result += " ";
 				else
 					first = false;
-				result += x.ToLiteral();
+				result += x;
 			}
 
 			return result;
@@ -166,6 +166,14 @@ namespace LithpBlunt
 		public static LithpList New(params LithpPrimitive[] values)
 		{
 			return new LithpList(values);
+		}
+
+		protected override LithpPrimitive operatorPlus(LithpPrimitive other)
+		{
+			LithpList newList = new LithpList(value.ToArray());
+			foreach (var x in (LithpList)other)
+				newList.Add(x);
+			return newList;
 		}
 	}
 }

@@ -1,0 +1,1 @@
+[[["def","fac-recursive",{"code":[[["def","fac-r-inner",{"code":[[["if",["==","0","N"],[["Acc"]],["else",[["recurse",["-","N","1"],["*","N","Acc"]]]]]]],"_fndef":true,"_fnparams":["N","Acc"]}],["fac-r-inner","N","1"]]],"_fndef":true,"_fnparams":["N"]}],["print",["fac-recursive","100"]]]]

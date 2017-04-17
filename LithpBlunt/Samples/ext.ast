@@ -1,0 +1,18 @@
+[
+	[
+		[
+			"platform",
+			"ext"
+		],
+		[
+			"print",
+			"\"Test count: \"",
+			[
+				"count-params",
+				"1",
+				"2",
+				"3"
+			]
+		]
+	]
+]

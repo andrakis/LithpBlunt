@@ -1,0 +1,1072 @@
+[
+	[
+		[
+			"import",
+			"lists"
+		],
+		[
+			"import",
+			"math"
+		],
+		[
+			"import",
+			"readline"
+		],
+		[
+			"import",
+			"switch"
+		],
+		[
+			"import",
+			"stderr"
+		],
+		[
+			"var",
+			"Acc",
+			"0"
+		],
+		[
+			"def",
+			"=",
+			{
+				"code": [
+					[
+						"Value"
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"Ignored",
+					"Value"
+				]
+			}
+		],
+		[
+			"def",
+			"v",
+			{
+				"code": [
+					[
+						"Acc"
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"def",
+			"p",
+			{
+				"code": [
+					[
+						[
+							"print",
+							[
+								"format-acc"
+							]
+						],
+						[
+							"v"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"def",
+			"f",
+			{
+				"code": [
+					[
+						[
+							"floor",
+							"Acc"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"def",
+			"c",
+			{
+				"code": [
+					[
+						[
+							"ceil",
+							"Acc"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"def",
+			"e",
+			{
+				"code": [
+					[
+						[
+							"exit"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"def",
+			"acc-op",
+			[
+				"scope",
+				{
+					"code": [
+						[
+							[
+								"var",
+								"Code",
+								[
+									"+",
+									"\"(\"",
+									"Op",
+									"\" Acc \"",
+									"Value",
+									"\")\""
+								]
+							],
+							[
+								"stderr-write",
+								[
+									"+",
+									"\"Code: \"",
+									"Code",
+									"\"\\n\""
+								]
+							],
+							[
+								"eval",
+								"Code"
+							]
+						]
+					],
+					"_fndef": true,
+					"_fnparams": [
+						"Op",
+						"Value"
+					]
+				}
+			]
+		],
+		[
+			"var",
+			"Commands",
+			[
+				"dict",
+				[
+					"tuple",
+					"\"c\"",
+					"\"Ceil of Acc\""
+				],
+				[
+					"tuple",
+					"\"f\"",
+					"\"Floor of Acc\""
+				],
+				[
+					"tuple",
+					"\"h\"",
+					"\"Display this help\""
+				],
+				[
+					"tuple",
+					"\"?\"",
+					"\"Display this help\""
+				],
+				[
+					"tuple",
+					"\"e\"",
+					"\"Exit\""
+				],
+				[
+					"tuple",
+					"\"p\"",
+					"\"Print Acc\""
+				],
+				[
+					"tuple",
+					"\"v\"",
+					"\"Current value of Acc\""
+				],
+				[
+					"tuple",
+					"\"=\"",
+					"\"Set Acc to given value\""
+				],
+				[
+					"tuple",
+					"\"H\"",
+					"\"Set hex mode output\""
+				],
+				[
+					"tuple",
+					"\"D\"",
+					"\"Set decimal mode output\""
+				],
+				[
+					"tuple",
+					"\"B\"",
+					"\"Set binary mode output\""
+				]
+			]
+		],
+		[
+			"var",
+			"AccFormat",
+			"\"D\""
+		],
+		[
+			"def",
+			"format-acc",
+			{
+				"code": [
+					[
+						[
+							"format-acc",
+							"AccFormat"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"var",
+			"FormatAccCaseHex",
+			[
+				"case",
+				"\"H\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"+",
+									"\"0x\"",
+									[
+										"to-string",
+										"Acc",
+										"16"
+									]
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"FormatAccCaseDecimal",
+			[
+				"case",
+				"\"D\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"get",
+									"Acc"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"FormatAccCaseBinary",
+			[
+				"case",
+				"\"B\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"+",
+									"\"B\"",
+									[
+										"to-string",
+										"Acc",
+										"2"
+									]
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"FormatAccCaseList",
+			[
+				"list",
+				"FormatAccCaseHex",
+				"FormatAccCaseDecimal",
+				"FormatAccCaseBinary"
+			]
+		],
+		[
+			"def",
+			"format-acc",
+			{
+				"code": [
+					[
+						[
+							"switch",
+							"Format",
+							"FormatAccCaseList"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"Format"
+				]
+			}
+		],
+		[
+			"def",
+			"set-acc-format",
+			{
+				"code": [
+					[
+						[
+							"set",
+							"AccFormat",
+							[
+								"get",
+								"Format"
+							]
+						],
+						[
+							"v"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"Format"
+				]
+			}
+		],
+		[
+			"var",
+			"BuiltinsAvailable",
+			[
+				"dict",
+				[
+					"tuple",
+					"1",
+					[
+						"list",
+						"abs",
+						"acos",
+						"acosh",
+						"asin",
+						"asinh",
+						"atan",
+						"atanh",
+						"cbrt",
+						"ceil",
+						"clz32",
+						"cos",
+						"cosh",
+						"floor",
+						"hypot",
+						"log",
+						"log10",
+						"log1p",
+						"log2",
+						"sign",
+						"sin",
+						"sinh",
+						"aqrt",
+						"tan",
+						"tanh"
+					]
+				],
+				[
+					"tuple",
+					"2",
+					[
+						"list",
+						"min",
+						"max",
+						"round",
+						"pow",
+						"imul",
+						"exp",
+						"expm1",
+						"fround",
+						"round"
+					]
+				]
+			]
+		],
+		[
+			"def",
+			"show-help",
+			{
+				"code": [
+					[
+						[
+							"print",
+							"\"Available commands:\""
+						],
+						[
+							"each",
+							[
+								"dict-keys",
+								"Commands"
+							],
+							{
+								"code": [
+									[
+										[
+											"print",
+											"\"    \"",
+											"Command",
+											"\" -> \"",
+											[
+												"index",
+												"Commands",
+												"Command"
+											]
+										]
+									]
+								],
+								"_fndef": true,
+								"_fnparams": [
+									"Command"
+								]
+							}
+						],
+						[
+							"print",
+							"\"Syntax: op value value value\""
+						],
+						[
+							"print",
+							"\"    eg: = 1\""
+						],
+						[
+							"print",
+							"\"      : + 2 2 3 v (sinh (pi))\""
+						],
+						[
+							"print",
+							"\"      : = 33.548739357257745\""
+						],
+						[
+							"print",
+							"\"Available builtins:\""
+						],
+						[
+							"print",
+							[
+								"join",
+								[
+									"map",
+									[
+										"dict-keys",
+										[
+											"dict-get",
+											"BuiltinsAvailable",
+											"1"
+										]
+									],
+									{
+										"code": [
+											[
+												[
+													"+",
+													"\"(\"",
+													[
+														"dict-get",
+														[
+															"dict-get",
+															"BuiltinsAvailable",
+															"1"
+														],
+														"Name"
+													],
+													"\" N)\""
+												]
+											]
+										],
+										"_fndef": true,
+										"_fnparams": [
+											"Name"
+										]
+									}
+								],
+								"\", \""
+							]
+						],
+						[
+							"print",
+							[
+								"join",
+								[
+									"map",
+									[
+										"dict-keys",
+										[
+											"dict-get",
+											"BuiltinsAvailable",
+											"2"
+										]
+									],
+									{
+										"code": [
+											[
+												[
+													"+",
+													"\"(\"",
+													[
+														"dict-get",
+														[
+															"dict-get",
+															"BuiltinsAvailable",
+															"2"
+														],
+														"Name"
+													],
+													"\" A B)\""
+												]
+											]
+										],
+										"_fndef": true,
+										"_fnparams": [
+											"Name"
+										]
+									}
+								],
+								"\", \""
+							]
+						],
+						[
+							"get",
+							"Acc"
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"var",
+			"CasePrint",
+			[
+				"case",
+				"\"p\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"p"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseQuit",
+			[
+				"case",
+				"\"q\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"e"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseCurrent",
+			[
+				"case",
+				"\"v\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"v"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseFloor",
+			[
+				"case",
+				"\"f\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"f"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseCeil",
+			[
+				"case",
+				"\"c\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"c"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseHex",
+			[
+				"case",
+				"\"H\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"set-acc-format",
+									"\"H\""
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseDecimal",
+			[
+				"case",
+				"\"D\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"set-acc-format",
+									"\"D\""
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseBinary",
+			[
+				"case",
+				"\"B\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"set-acc-format",
+									"\"B\""
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseHelp1",
+			[
+				"case",
+				"\"h\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"show-help"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseHelp2",
+			[
+				"case",
+				"\"?\"",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"show-help"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": []
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseDefault",
+			[
+				"default",
+				[
+					"scope",
+					{
+						"code": [
+							[
+								[
+									"print",
+									"\"Unknown command\""
+								],
+								[
+									"get",
+									"Acc"
+								]
+							]
+						],
+						"_fndef": true,
+						"_fnparams": [
+							"Given"
+						]
+					}
+				]
+			]
+		],
+		[
+			"var",
+			"CaseList",
+			[
+				"list",
+				"CasePrint",
+				"CaseQuit",
+				"CaseCurrent",
+				"CaseFloor",
+				"CaseCeil",
+				"CaseHex",
+				"CaseDecimal",
+				"CaseBinary",
+				"CaseHelp1",
+				"CaseHelp2",
+				"CaseDefault"
+			]
+		],
+		[
+			"def",
+			"parse",
+			{
+				"code": [
+					[
+						[
+							"var",
+							"Matches",
+							[
+								"match",
+								"Entry",
+								"\"([-=+*/!@#$%^&<>a-z]+) (.*)$\""
+							]
+						],
+						[
+							"if",
+							[
+								"==",
+								[
+									"null"
+								],
+								"Matches"
+							],
+							[
+								[
+									"switch",
+									"Entry",
+									"CaseList"
+								]
+							],
+							[
+								"else",
+								[
+									[
+										"var",
+										"Tail",
+										[
+											"index",
+											"Matches",
+											"2"
+										]
+									],
+									[
+										"set",
+										"Tail",
+										[
+											"replace",
+											"Tail",
+											[
+												"regex",
+												"\"(?:^|\\\\s)([a-z]+)(?=\\\\s|$)\"",
+												"\"g\""
+											],
+											[
+												"js-bridge",
+												{
+													"code": [
+														[
+															[
+																"+",
+																"\"(\"",
+																[
+																	"trim",
+																	"Value"
+																],
+																"\") \""
+															]
+														]
+													],
+													"_fndef": true,
+													"_fnparams": [
+														"Value"
+													]
+												}
+											]
+										]
+									],
+									[
+										"try",
+										[
+											[
+												"acc-op",
+												[
+													"index",
+													"Matches",
+													"1"
+												],
+												"Tail"
+											]
+										],
+										{
+											"code": [
+												[
+													[
+														"stderr-write",
+														[
+															"+",
+															"\"Failed to parse: \"",
+															[
+																"to-string",
+																"E"
+															],
+															"\"\\n\""
+														]
+													],
+													[
+														"c"
+													]
+												]
+											],
+											"_fndef": true,
+											"_fnparams": [
+												"E"
+											]
+										}
+									]
+								]
+							]
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": [
+					"Entry"
+				]
+			}
+		],
+		[
+			"def",
+			"input-loop",
+			{
+				"code": [
+					[
+						[
+							"readline",
+							[
+								"+",
+								[
+									"format-acc"
+								],
+								"\">\""
+							],
+							[
+								"scope",
+								{
+									"code": [
+										[
+											[
+												"set",
+												"Acc",
+												[
+													"parse",
+													"Value"
+												]
+											],
+											[
+												"input-loop"
+											]
+										]
+									],
+									"_fndef": true,
+									"_fnparams": [
+										"Value"
+									]
+								}
+							]
+						]
+					]
+				],
+				"_fndef": true,
+				"_fnparams": []
+			}
+		],
+		[
+			"if",
+			[
+				"==",
+				[
+					"host"
+				],
+				"\"Node.js\""
+			],
+			[
+				[
+					"input-loop"
+				]
+			],
+			[
+				"else",
+				[
+					[
+						"import",
+						"html-toolkit"
+					],
+					[
+						"htmlOnLoad",
+						{
+							"code": [
+								[
+									[
+										"input-loop"
+									]
+								]
+							],
+							"_fndef": true,
+							"_fnparams": []
+						}
+					]
+				]
+			]
+		]
+	]
+]

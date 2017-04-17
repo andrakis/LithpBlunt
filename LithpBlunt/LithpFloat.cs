@@ -97,9 +97,24 @@ namespace LithpBlunt
 			return new LithpFloat(v);
 		}
 
+		public static implicit operator double(LithpFloat v)
+		{
+			return v.value;
+		}
+
 		public static implicit operator LithpFloat(int v)
 		{
 			return new LithpFloat(v);
+		}
+
+		public static implicit operator LithpFloat(string v)
+		{
+			return NumberType.Parse(v);
+		}
+
+		public LithpPrimitive Sqrt()
+		{
+			return new LithpFloat(Math.Sqrt(value));
 		}
 	}
 }

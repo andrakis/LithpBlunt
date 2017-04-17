@@ -16,6 +16,11 @@ namespace LithpBlunt
 		public static readonly int MaxDebugLen = 100;
 		public static readonly int MaxDebugArrayLength = 100;
 
+		protected static UInt64 fnCalls = 0;
+		public static UInt64 FunctionCalls {
+			get { return fnCalls; }
+		}
+
 #if DEBUG
 		static LithpInterpreter()
 		{
@@ -46,16 +51,12 @@ namespace LithpBlunt
 					case LithpType.FUNCTIONCALL:
 						LithpFunctionCall call = (LithpFunctionCall)current;
 						LithpList resolved = ResolveParameters(call, chain);
-						depth++;
 						value = InvokeResolved(call, resolved, chain);
 						if(value.LithpType() == LithpType.OPCHAIN)
 						{
 							LithpOpChain subchain = (LithpOpChain)value;
-							depth++;
 							value = this.Run(new LithpOpChain(chain, subchain));
-							depth--;
 						}
-						depth--;
 						break;
 					case LithpType.LITERAL:
 						value = ((LithpLiteral)current).Value;
@@ -96,9 +97,7 @@ namespace LithpBlunt
 						LithpOpChain subchain = (LithpOpChain)value;
 						if (subchain.IsImmediate)
 						{
-							depth++;
 							value = this.Run(new LithpOpChain(chain, subchain));
-							depth--;
 						}
 					}
 					return value;
@@ -172,7 +171,7 @@ namespace LithpBlunt
 				def = (ILithpFunctionDefinition)chain.Closure[call.Function];
 			} else
 			{
-				string arityStar = Regex.Replace(call.Function, @"/\d+$/", "*");
+				string arityStar = Regex.Replace(call.Function, @"\d+$", "*");
 				name = arityStar;
 				if(chain.Closure.IsDefinedAny(arityStar))
 				{
@@ -197,6 +196,7 @@ namespace LithpBlunt
 #endif
 
 			depth++;
+			fnCalls++;
 
 			try
 			{

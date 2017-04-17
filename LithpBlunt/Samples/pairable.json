@@ -1,0 +1,1 @@
+[[["def","f",{"code":[[["?",["!=",["null"],["match","S","\"^((.+)\\\\2)+$\""]],"true","false"]]],"_fndef":true,"_fnparams":["S"]}],["print",["f","\"aa\""]],["print",["f","\"aabaaababbbaba\""]],["print",["f","\"aaababbabbabbbababbaabaabaababaaba\""]],["print",["f","\"ba\""]]]]

@@ -1,0 +1,1 @@
+[[["def","f",{"code":[[["replace","X",["regex","\"([aeiou]+[^aeiou]*){1,2} [^aeiou]*\""],"\"\""]]],"_fndef":true,"_fnparams":["X"]}],["print",["f","\"brad angelina\""]]]]

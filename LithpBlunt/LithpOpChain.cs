@@ -11,13 +11,16 @@ namespace LithpBlunt
 	public class LithpOpChain : LithpListType<ILithpOpChainMember>, ILithpOpChainMember
 	{
 		public readonly LithpClosure Closure;
-		public readonly LithpOpChain Parent;
+		public LithpOpChain Parent;
 
 		public string FunctionEntry = null;
 
 		protected int Location = 0; // location in list
 
 		public readonly bool Scoped;
+
+		protected static int instanceId = 0;
+		public readonly int InstanceId = instanceId++;
 
 		public bool IsImmediate = false;
 		public LithpOpChain CallImmediate()

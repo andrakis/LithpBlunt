@@ -162,6 +162,50 @@ namespace LithpBlunt
 			return a.operatorMultiply(b);
 		}
 
+		public static LithpPrimitive operator %(LithpPrimitive a, LithpPrimitive b)
+		{
+			b = b.Cast(a.LithpType());
+			return a.operatorModulo(b);
+		}
+
+		public static LithpPrimitive operator &(LithpPrimitive a, LithpPrimitive b)
+		{
+			b = b.Cast(a.LithpType());
+			return a.operatorBinaryAnd(b);
+		}
+
+		public static LithpPrimitive operator |(LithpPrimitive a, LithpPrimitive b)
+		{
+			b = b.Cast(a.LithpType());
+			return a.operatorBinaryOr(b);
+		}
+
+		public static LithpPrimitive operator ^(LithpPrimitive a, LithpPrimitive b)
+		{
+			b = b.Cast(a.LithpType());
+			return a.operatorBinaryXor(b);
+		}
+
+		protected virtual LithpPrimitive operatorModulo(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
+		protected virtual LithpPrimitive operatorBinaryAnd(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
+		protected virtual LithpPrimitive operatorBinaryOr(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
+		protected virtual LithpPrimitive operatorBinaryXor(LithpPrimitive other)
+		{
+			throw new NotImplementedException();
+		}
+
 		protected virtual bool compareLessThan(LithpPrimitive other)
 		{
 			return false;
